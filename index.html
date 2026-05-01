@@ -26,7 +26,7 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230B0B0D'/%3E%3Cpath d='M 37.5 28.5 A 15 15 0 1 0 33 35.5' stroke='%23FAFAF7' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Cline x1='35' y1='32' x2='43' y2='40' stroke='%23E4A340' stroke-width='4.2' stroke-linecap='round'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317150F'/%3E%3Cpath d='M 23 18 A 9 9 0 1 0 20 23' stroke='%23FAFAF7' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3Cline x1='21.5' y1='20.8' x2='27' y2='26.2' stroke='%23E4A340' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E"
     />
     <script>
       document.documentElement.classList.add("js");
@@ -62,14 +62,16 @@
       *::before,
       *::after {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       html {
         scroll-behavior: smooth;
+        font-size: 16px;
       }
 
       body {
-        margin: 0;
         min-width: 320px;
         overflow-x: hidden;
         background:
@@ -77,9 +79,33 @@
           radial-gradient(circle at 18% 8%, rgba(228, 163, 64, 0.04), transparent 18%),
           var(--black);
         color: var(--warm-white);
-        font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'DM Sans', 'Helvetica Neue', Helvetica, sans-serif;
         font-size: var(--body);
+        font-weight: 400;
         line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        height: 3px;
+        background: var(--amber-bright);
+      }
+
+      ::selection {
+        color: var(--near-black);
+        background: var(--amber-bright);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--amber-bright);
+        outline-offset: 3px;
       }
 
       a {
@@ -109,37 +135,21 @@
         border: 0;
       }
 
-      .top-rule {
+      #scroll-progress {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 30;
-        width: 100%;
-        height: 3px;
-        background: rgba(228, 163, 64, 0.34);
-      }
-
-      .scroll-progress {
-        position: fixed;
-        top: 3px;
-        left: 0;
-        z-index: 29;
-        width: 100%;
-        height: 3px;
-        background: transparent;
+        z-index: 10000;
+        width: 0%;
+        height: 2px;
+        background: var(--amber-bright);
         pointer-events: none;
-      }
-
-      .scroll-progress-bar {
-        width: 0;
-        height: 100%;
-        background: linear-gradient(90deg, var(--amber), var(--amber-bright), var(--amber-flash));
-        box-shadow: 0 0 22px rgba(228, 163, 64, 0.45);
+        transition: width 50ms linear;
       }
 
       .site-nav {
         position: fixed;
-        top: 6px;
+        top: 3px;
         left: 0;
         z-index: 20;
         width: 100%;
@@ -163,7 +173,61 @@
         min-height: var(--nav-height);
       }
 
-      .brand {
+      .nav-logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--off-white);
+        text-decoration: none;
+      }
+
+      .nav-logo::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(228, 163, 64, 0.32);
+        border-radius: 50%;
+        opacity: 0;
+        transform: translateY(-50%) scale(0.72);
+        pointer-events: none;
+      }
+
+      .nav-logo:hover::before,
+      .nav-logo:focus-visible::before {
+        animation: pulse-ring 620ms ease-out 1;
+      }
+
+      .nav-q-icon line {
+        transition: stroke 300ms ease;
+      }
+
+      .nav-q-icon path {
+        transition: filter 300ms ease;
+      }
+
+      .nav-logo:hover .nav-q-icon line,
+      .nav-logo:focus-visible .nav-q-icon line {
+        stroke: var(--amber-flash);
+      }
+
+      .nav-logo:hover .nav-q-icon path,
+      .nav-logo:focus-visible .nav-q-icon path {
+        filter: drop-shadow(0 0 6px rgba(228, 163, 64, 0.3));
+      }
+
+      .nav-wordmark {
+        color: var(--off-white);
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .brand,
+      .footer-brand {
         display: inline-flex;
         align-items: center;
         gap: 12px;
@@ -201,12 +265,6 @@
       .brand:hover .pulse-ring,
       .brand:focus-visible .pulse-ring {
         animation: pulse-ring 600ms ease-out 1;
-      }
-
-      .brand-wordmark {
-        font-size: 15px;
-        font-weight: 800;
-        letter-spacing: 0.16em;
       }
 
       .nav-cta,
@@ -251,7 +309,8 @@
       }
 
       .section-label,
-      .eyebrow {
+      .eyebrow,
+      .coming-soon-label {
         display: inline-flex;
         align-items: center;
         gap: 8px;
@@ -263,13 +322,30 @@
         text-transform: uppercase;
       }
 
+      .coming-soon-label {
+        margin-bottom: 28px;
+        letter-spacing: 0.12em;
+      }
+
+      .pulse-dot,
       .eyebrow-dot {
-        width: 8px;
-        height: 8px;
+        position: relative;
+        width: 6px;
+        height: 6px;
+        flex-shrink: 0;
         border-radius: 50%;
         background: var(--amber-bright);
-        box-shadow: 0 0 14px rgba(228, 163, 64, 0.45);
-        animation: pulse-dot 1.8s ease-in-out infinite;
+      }
+
+      .pulse-dot::after,
+      .eyebrow-dot::after {
+        content: "";
+        position: absolute;
+        inset: -3px;
+        border-radius: 50%;
+        background: var(--amber-bright);
+        opacity: 0.4;
+        animation: pulse-ring 2s ease-out infinite;
       }
 
       .section-title,
@@ -283,8 +359,11 @@
       }
 
       .hero {
-        min-height: calc(100svh - 6px);
-        overflow: clip;
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 100svh;
+        overflow: hidden;
         background:
           linear-gradient(180deg, rgba(26, 24, 16, 0.24), transparent 18%),
           var(--black);
@@ -297,47 +376,65 @@
         padding: 138px 0 96px;
       }
 
+      .hero-content,
       .hero-copy {
         position: relative;
-        z-index: 2;
+        z-index: 1;
         width: min(720px, 100%);
       }
 
       .hero-headline {
-        font-size: var(--display);
+        margin-bottom: 0;
+        color: var(--off-white);
+        font-size: clamp(52px, 8vw, 96px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1;
       }
 
       .hero-headline .line {
         display: block;
       }
 
-      .hero-headline .line-amber {
+      .hero-headline .line-amber,
+      .hero-headline .amber-line {
         color: var(--amber-bright);
+        display: block;
       }
 
+      .hero-subhead,
       .hero-subheadline {
-        margin: 18px 0 0;
+        margin-top: 16px;
         color: var(--muted);
-        font-size: var(--h2);
+        font-size: clamp(20px, 3vw, 28px);
         font-weight: 500;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.01em;
       }
 
       .hero-body {
-        max-width: 38rem;
-        margin: 22px 0 0;
-        color: var(--off-white);
-        font-size: var(--body-lg);
+        max-width: 520px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.7;
       }
 
       .hero-watermark {
         position: absolute;
+        right: -8%;
         top: 50%;
-        right: -110px;
-        width: min(58vw, 820px);
+        z-index: 0;
+        width: 65vw;
+        max-width: 700px;
         transform: translateY(-50%);
-        opacity: 0.82;
+        opacity: 1;
         pointer-events: none;
+      }
+
+      .hero-watermark svg {
+        width: 100%;
+        height: auto;
       }
 
       .hero-watermark path,
@@ -345,60 +442,80 @@
         stroke: #1a1710;
       }
 
+      .hero-cta,
+      .cta-form,
       .waitlist-form {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 12px;
-        max-width: 620px;
+        display: flex;
+        gap: 8px;
+        width: 100%;
+        max-width: 480px;
+      }
+
+      .hero-cta,
+      .waitlist-form {
         margin-top: 28px;
       }
 
+      .cta-input,
       .waitlist-input {
-        min-height: 56px;
-        width: 100%;
-        padding: 0 18px;
-        color: var(--warm-white);
-        background: rgba(23, 21, 15, 0.88);
+        flex: 1;
+        min-height: 49px;
+        padding: 14px 18px;
+        color: var(--off-white);
+        background: var(--panel);
         border: 1px solid var(--div);
-        border-radius: 999px;
+        border-radius: 6px;
+        font-size: 15px;
         outline: none;
-        transition: border-color 300ms ease, box-shadow 300ms ease;
+        transition: border-color 300ms ease;
       }
 
+      .cta-input::placeholder,
       .waitlist-input::placeholder {
-        color: rgba(250, 250, 247, 0.48);
+        color: #4a4438;
       }
 
+      .cta-input:focus,
       .waitlist-input:focus {
         border-color: var(--amber-bright);
-        box-shadow: 0 0 0 4px rgba(228, 163, 64, 0.14);
       }
 
+      .cta-button,
       .waitlist-button {
         color: var(--near-black);
         background: var(--amber-bright);
-        box-shadow: 0 16px 40px rgba(228, 163, 64, 0.18);
+        border: 0;
+        border-radius: 6px;
+        padding: 14px 22px;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
         cursor: pointer;
+        transition: background 200ms ease, transform 150ms ease;
       }
 
+      .cta-button:hover,
+      .cta-button:focus-visible,
       .waitlist-button:hover,
       .waitlist-button:focus-visible {
         background: var(--amber-flash);
-        border-color: var(--amber-flash);
-        transform: scale(1.02);
+        transform: translateY(-1px);
       }
 
+      .cta-button:active,
       .waitlist-button:active {
-        transform: scale(0.98);
+        transform: translateY(0) scale(0.98);
       }
 
+      .cta-button.is-success,
       .waitlist-button.is-success {
-        background: var(--amber-flash);
-        border-color: var(--amber-flash);
-        animation: button-flash 420ms ease;
+        color: #6db33f;
+        background: #2a4a1a;
       }
 
       .hero-note,
+      .hero-trust,
       .form-status,
       .callout-note,
       .trust-disclaimer {
@@ -406,7 +523,8 @@
         font-size: 14px;
       }
 
-      .hero-note {
+      .hero-note,
+      .hero-trust {
         margin: 14px 0 0;
       }
 
@@ -458,7 +576,7 @@
       .how .section-shell,
       .why .section-shell,
       .early .section-shell {
-        padding: 96px 0;
+        padding: clamp(80px, 12vw, 140px) 0;
       }
 
       .problem-header,
@@ -469,7 +587,10 @@
       .problem-title,
       .section-title,
       .early-title {
-        font-size: var(--h1);
+        margin-bottom: 20px;
+        color: var(--off-white);
+        font-size: clamp(28px, 4.5vw, 48px);
+        line-height: 1.1;
       }
 
       .problem-subtitle,
@@ -485,7 +606,7 @@
       .early-benefits {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        gap: 2px;
         margin-top: 40px;
       }
 
@@ -502,15 +623,24 @@
         box-shadow: var(--shadow);
       }
 
+      .problem-card {
+        padding: 28px 24px;
+        background: var(--panel);
+        border: 1px solid var(--div);
+        border-left: 3px solid var(--amber-bright);
+        border-radius: 0 8px 8px 0;
+        box-shadow: none;
+      }
+
       .problem-card-number,
       .step-number,
       .benefit-label {
         display: inline-block;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         color: var(--amber-bright);
         font-size: var(--label);
         font-weight: 700;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
 
@@ -521,9 +651,9 @@
       .trust-list h3,
       .stat-title {
         margin: 0;
-        font-size: 22px;
+        font-size: 17px;
         font-weight: 700;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.01em;
       }
 
       .problem-card p,
@@ -532,12 +662,14 @@
       .pillar-copy,
       .trust-list p,
       .stat-copy {
-        margin: 12px 0 0;
-        color: var(--off-white);
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
       }
 
       .problem-closer {
-        margin: 42px auto 0;
+        margin: 64px auto 0;
         max-width: 720px;
         text-align: center;
       }
@@ -545,17 +677,17 @@
       .problem-closer strong,
       .why-closer strong {
         display: inline-block;
-        font-size: clamp(22px, 3vw, 30px);
+        color: var(--off-white);
+        font-size: clamp(18px, 2.5vw, 24px);
         font-weight: 700;
         letter-spacing: -0.02em;
       }
 
       .underline-accent {
-        width: 120px;
-        height: 3px;
-        margin: 18px auto 0;
-        border-radius: 999px;
-        background: linear-gradient(90deg, transparent, var(--amber-bright), transparent);
+        width: 40%;
+        height: 2px;
+        margin: 12px auto 0;
+        background: var(--amber-bright);
       }
 
       .what {
@@ -568,52 +700,387 @@
       .why-grid,
       .footer-shell {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-        gap: 42px;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: clamp(40px, 6vw, 100px);
         align-items: start;
       }
 
       .stats-row {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 32px;
+        gap: 24px;
+        margin-top: 40px;
+        padding-top: 32px;
+        border-top: 1px solid var(--div);
       }
 
       .stat-card {
-        padding: 20px 18px;
-        border: 1px solid var(--div);
-        border-radius: var(--radius-md);
-        background: rgba(23, 21, 15, 0.54);
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
       }
 
       .stat-title {
-        font-size: 15px;
-        color: var(--warm-white);
+        margin-bottom: 4px;
+        color: var(--off-white);
+        font-size: 13px;
+        font-weight: 700;
       }
 
       .stat-copy {
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 1.5;
         color: var(--muted);
       }
 
       .pillars {
-        border-top: 1px solid rgba(228, 163, 64, 0.35);
+        border-top: 1px solid var(--div);
       }
 
       .pillar {
         display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 18px;
-        padding: 24px 0;
-        border-bottom: 1px solid rgba(228, 163, 64, 0.2);
+        grid-template-columns: 32px 1fr;
+        gap: 16px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--div);
       }
 
       .pillar-number {
         color: var(--amber-bright);
-        font-size: 24px;
+        font-size: var(--label);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        padding-top: 2px;
+      }
+
+      .pillar-title {
+        margin-bottom: 4px;
+        color: var(--off-white);
+        font-size: 13px;
+        letter-spacing: 0.06em;
+      }
+
+      .pillar-copy {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .amber {
+        color: var(--amber-bright);
+      }
+
+      .systems {
+        background: var(--black);
+      }
+
+      .systems-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 40px;
+        margin-bottom: 36px;
+      }
+
+      .systems-title {
+        max-width: 560px;
+        color: var(--off-white);
+        font-size: clamp(22px, 3vw, 34px);
         font-weight: 800;
         letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+
+      .systems-sub {
+        max-width: 270px;
+        flex-shrink: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+        text-align: right;
+      }
+
+      .systems-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        background: #1e1c16;
+        border: 1px solid #1e1c16;
+      }
+
+      .system-card {
+        position: relative;
+        min-height: 100%;
+        padding: 28px 24px;
+        background: #0f0e0b;
+      }
+
+      .system-card.featured {
+        background: #121008;
+      }
+
+      .system-tag {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--amber-bright);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .system-name {
+        margin-bottom: 6px;
+        color: var(--off-white);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+      }
+
+      .system-market {
+        margin-bottom: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.02em;
+      }
+
+      .system-desc {
+        margin-bottom: 22px;
+        color: #6a6058;
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .system-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding-top: 16px;
+        border-top: 1px solid #1e1c16;
+      }
+
+      .meta-label {
+        margin-bottom: 3px;
+        color: #3a3530;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .meta-value {
+        color: var(--off-white);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .meta-value.accent {
+        color: var(--amber-bright);
+      }
+
+      .live-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        color: var(--amber-bright);
+        background: #1a1408;
+        border: 1px solid var(--amber-bright);
+        border-radius: 99px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+      }
+
+      .live-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--amber-bright);
+        animation: live-pulse 2s ease-out infinite;
+      }
+
+      .criteria {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 2px;
+        padding: 18px 24px;
+        background: #090807;
+        border: 1px solid #1e1c16;
+        border-top: 2px solid var(--amber-bright);
+      }
+
+      .criteria-label {
+        flex-shrink: 0;
+        color: var(--amber-bright);
+        font-size: var(--label);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .criteria-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+      }
+
+      .criteria-item {
+        color: #6a6058;
+        font-size: 13px;
+      }
+
+      .founders {
+        background:
+          linear-gradient(180deg, rgba(15, 14, 11, 1), rgba(11, 11, 13, 1)),
+          var(--black);
+      }
+
+      .founders-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: end;
+        margin-bottom: 36px;
+      }
+
+      .founders-headline {
+        color: var(--off-white);
+        font-size: clamp(22px, 3vw, 36px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .founders-copy {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .founders-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        background: #1e1c16;
+      }
+
+      .founder-card {
+        padding: 32px 28px;
+        background: #0f0e0b;
+      }
+
+      .founder-initial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 18px;
+        color: var(--amber-bright);
+        background: var(--panel);
+        border: 1px solid var(--div);
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .founder-name {
+        margin-bottom: 3px;
+        color: var(--off-white);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .founder-role {
+        margin-bottom: 14px;
+        color: var(--amber-bright);
+        font-size: var(--label);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .founder-body {
+        margin-bottom: 20px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .founder-points {
+        padding-top: 14px;
+        border-top: 1px solid #1e1c16;
+      }
+
+      .founder-points-label {
+        margin-bottom: 8px;
+        color: #3a3530;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .founder-point {
+        position: relative;
+        margin-bottom: 4px;
+        padding-left: 14px;
+        color: #6a6058;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .founder-point::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        color: var(--amber-bright);
+        font-size: 11px;
+      }
+
+      .bottom-statement {
+        padding: 56px 0;
+        text-align: center;
+        background: var(--black);
+      }
+
+      .bottom-statement-text {
+        margin-bottom: 10px;
+        color: var(--off-white);
+        font-size: clamp(16px, 2.2vw, 24px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .bottom-statement-rule {
+        width: 44px;
+        height: 2px;
+        margin: 0 auto;
+        background: var(--amber-bright);
+      }
+
+      @keyframes live-pulse {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.3;
+        }
+
+        100% {
+          opacity: 1;
+        }
       }
 
       .how {
@@ -626,45 +1093,83 @@
         position: relative;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        gap: 32px;
         margin-top: 42px;
       }
 
-      .steps::before {
-        content: "";
-        position: absolute;
-        top: 42px;
-        left: 15%;
-        right: 15%;
-        border-top: 1px dashed rgba(228, 163, 64, 0.42);
-      }
-
       .step-card {
-        border-left: 1px solid rgba(228, 163, 64, 0.25);
-        background: rgba(26, 24, 16, 0.88);
+        z-index: 1;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
       }
 
       .step-number {
-        font-size: 28px;
-        font-weight: 800;
-        letter-spacing: -0.04em;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        margin-bottom: 16px;
+        padding-right: 8px;
+        background: var(--black);
+        font-size: var(--label);
+        font-weight: 700;
+        letter-spacing: 0.1em;
       }
 
+      .step-title {
+        margin-bottom: 10px;
+        color: var(--off-white);
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .step-body {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      @media (min-width: 769px) {
+        .steps::before {
+          content: "";
+          position: absolute;
+          top: 28px;
+          left: calc(16.66% + 16px);
+          right: calc(16.66% + 16px);
+          z-index: 0;
+          height: 1px;
+          background: repeating-linear-gradient(
+            to right,
+            var(--amber-bright) 0,
+            var(--amber-bright) 6px,
+            transparent 6px,
+            transparent 14px
+          );
+        }
+      }
+
+      .promise-box,
       .callout-box {
-        margin-top: 38px;
-        padding: 28px;
-        border: 1px solid rgba(228, 163, 64, 0.72);
-        border-radius: var(--radius-md);
+        max-width: 560px;
+        margin: 56px auto 0;
+        padding: 28px 32px;
+        border: 1px solid var(--amber-bright);
+        border-radius: 8px;
         background: transparent;
         text-align: center;
       }
 
+      .promise-box strong,
       .callout-box strong {
         display: block;
-        font-size: clamp(28px, 4vw, 44px);
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        line-height: 1.02;
+        color: var(--off-white);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.4;
       }
 
       .callout-box strong + strong {
@@ -684,10 +1189,21 @@
           var(--near-black);
       }
 
+      .brand-statement-text,
       .quote-display {
         color: var(--amber-bright);
-        font-size: clamp(42px, 6vw, 80px);
-        max-width: 12ch;
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+      }
+
+      .brand-statement-text::before,
+      .brand-statement-text::after,
+      .quote-display::before,
+      .quote-display::after {
+        content: none;
+        display: none;
       }
 
       .trust-list {
@@ -738,22 +1254,44 @@
       }
 
       .early-benefits {
+        gap: 16px;
         margin-top: 34px;
+        margin-bottom: 56px;
       }
 
       .benefit-card {
-        border-left: 1px solid rgba(228, 163, 64, 0.24);
-        background: rgba(26, 24, 16, 0.82);
+        padding: 24px 20px;
+        background: var(--panel);
+        border: 1px solid var(--div);
+        border-top: 2px solid var(--amber-bright);
+        border-left: 1px solid var(--div);
+        border-radius: 0 0 8px 8px;
+        box-shadow: none;
+      }
+
+      .benefit-label {
+        margin-bottom: 8px;
+        color: var(--amber-bright);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .benefit-body {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
       }
 
       .join-label {
-        margin: 34px 0 0;
+        margin: 0;
         color: var(--warm-white);
         font-size: 14px;
         font-weight: 500;
         text-align: center;
       }
 
+      .early .cta-form,
       .early .waitlist-form {
         margin: 14px auto 0;
       }
@@ -831,26 +1369,23 @@
         text-align: center;
       }
 
-      .js [data-load],
-      .js [data-reveal],
-      .js .hero-watermark {
-        opacity: 0;
-        transform: translateY(20px);
+      .coming-soon-label,
+      .hero-headline,
+      .hero-subhead,
+      .hero-body,
+      .hero-cta,
+      .hero-trust,
+      .hero-watermark {
+        will-change: opacity, transform;
       }
 
       .js .hero-watermark {
+        opacity: 0;
         transform: translateY(-50%);
       }
 
-      .js [data-load].is-visible,
-      .js [data-reveal].is-visible {
-        opacity: 1;
-        transform: none;
-        transition: opacity 720ms ease, transform 720ms ease;
-      }
-
       .js .hero-watermark.is-visible {
-        opacity: 0.82;
+        opacity: 1;
         transform: translateY(-50%);
         transition: opacity 1200ms ease;
       }
@@ -927,9 +1462,23 @@
         .footer-shell,
         .problem-grid,
         .early-benefits,
+        .systems-header,
+        .systems-grid,
+        .founders-intro,
+        .founders-grid,
         .steps,
         .stats-row {
           grid-template-columns: 1fr;
+        }
+
+        .systems-header {
+          display: grid;
+          gap: 18px;
+        }
+
+        .systems-sub {
+          max-width: none;
+          text-align: left;
         }
 
         .steps::before {
@@ -955,7 +1504,7 @@
           width: min(100% - 24px, 1160px);
         }
 
-        .brand-wordmark {
+        .nav-wordmark {
           display: none;
         }
 
@@ -986,14 +1535,16 @@
           transform: none;
         }
 
+        .cta-form,
         .waitlist-form {
-          grid-template-columns: 1fr;
+          flex-direction: column;
         }
 
         .early-panel {
           padding: 30px 18px;
         }
 
+        .brand-statement-text,
         .quote-display {
           max-width: none;
         }
@@ -1005,12 +1556,14 @@
         }
 
         .eyebrow-dot,
+        .pulse-dot::after,
         .brand:hover .pulse-ring,
-        .brand:focus-visible .pulse-ring {
+        .brand:focus-visible .pulse-ring,
+        .nav-logo:hover::before,
+        .nav-logo:focus-visible::before {
           animation: none;
         }
 
-        .js [data-load],
         .js [data-reveal],
         .js .hero-watermark,
         .js .problem-card,
@@ -1024,37 +1577,24 @@
     </style>
   </head>
   <body>
-    <div class="top-rule" aria-hidden="true"></div>
-    <div class="scroll-progress" aria-hidden="true">
-      <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
-    </div>
+    <div id="scroll-progress" aria-hidden="true"></div>
 
     <nav class="site-nav" aria-label="Primary">
-      <div class="nav-shell" data-load style="transition-delay: 0ms">
-        <a class="brand" href="#hero" aria-label="Quantro home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle class="pulse-ring" cx="24" cy="24" r="18.5" stroke="rgba(228, 163, 64, 0.42)" stroke-width="1.2" />
-              <path
-                d="M 37.5 28.5 A 15 15 0 1 0 33 35.5"
-                stroke="currentColor"
-                stroke-width="3.2"
-                stroke-linecap="round"
-                fill="none"
-              />
-              <line
-                class="tail"
-                x1="35"
-                y1="32"
-                x2="43"
-                y2="40"
-                stroke="#E4A340"
-                stroke-width="3.4"
-                stroke-linecap="round"
-              />
-            </svg>
-          </span>
-          <span class="brand-wordmark">QUANTRO</span>
+      <div class="nav-shell">
+        <a href="#hero" class="nav-logo" aria-label="Quantro home">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-q-icon" aria-hidden="true">
+            <path
+              d="M 21.2 16.5
+                 A 9.2 9.2 0 1 0 18.9 20.6"
+              stroke="#FAFAF7"
+              stroke-width="2.0"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <line x1="20.2" y1="18.8" x2="25.2" y2="23.8"
+                  stroke="#E4A340" stroke-width="2.1" stroke-linecap="round"/>
+          </svg>
+          <span class="nav-wordmark">QUANTRO</span>
         </a>
         <a class="nav-cta" href="#early" aria-label="Get early access to Quantro">Get Early Access</a>
       </div>
@@ -1063,24 +1603,24 @@
     <main class="page-main">
       <section class="section hero" id="hero" aria-labelledby="hero-title">
         <div class="section-shell">
-          <div class="hero-copy">
-            <p class="eyebrow" data-load style="transition-delay: 80ms">
-              <span class="eyebrow-dot" aria-hidden="true"></span>
+          <div class="hero-content">
+            <div class="coming-soon-label">
+              <span class="pulse-dot" aria-hidden="true"></span>
               COMING SOON
-            </p>
+            </div>
             <h1 class="hero-headline" id="hero-title">
-              <span class="line" data-load style="transition-delay: 160ms">The edge was never</span>
-              <span class="line line-amber" data-load style="transition-delay: 240ms">in watching charts.</span>
+              The edge was never<br>
+              <span class="amber-line">in watching charts.</span>
             </h1>
-            <p class="hero-subheadline" data-load style="transition-delay: 320ms">It was always in execution.</p>
-            <p class="hero-body" data-load style="transition-delay: 400ms">
+            <p class="hero-subhead">It was always in execution.</p>
+            <p class="hero-body">
               Quantro automates proven trading systems so your capital works with discipline — without you at the screen.
             </p>
 
-            <form class="waitlist-form js-waitlist-form" action="#" method="post" data-load style="transition-delay: 480ms">
+            <form class="cta-form hero-cta js-waitlist-form" action="#" method="post">
               <label class="visually-hidden" for="hero-email">Email address</label>
               <input
-                class="waitlist-input"
+                class="cta-input"
                 id="hero-email"
                 name="email"
                 type="email"
@@ -1089,24 +1629,28 @@
                 required
                 aria-label="Email address for early access"
               />
-              <button class="waitlist-button" type="submit" aria-label="Request early access">
+              <button class="cta-button" type="submit" aria-label="Request early access">
                 Request Early Access
               </button>
             </form>
-            <p class="hero-note" data-load style="transition-delay: 560ms">Non-custodial. Your capital. Your keys. Always.</p>
+            <p class="hero-trust">Non-custodial. Your capital. Your keys. Always.</p>
             <p class="form-status" aria-live="polite"></p>
           </div>
 
-          <svg class="hero-watermark" viewBox="0 0 640 640" aria-hidden="true">
-            <path
-              d="M 470 320
-                 A 190 190 0 1 0 410 415"
-              stroke-width="42"
-              stroke-linecap="round"
-              fill="none"
-            />
-            <line x1="436" y1="396" x2="546" y2="506" stroke-width="46" stroke-linecap="round" />
-          </svg>
+          <div class="hero-watermark" aria-hidden="true">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M 310 175
+                   A 140 140 0 1 0 285 240"
+                stroke="#1A1710"
+                stroke-width="22"
+                stroke-linecap="round"
+                fill="none"
+              />
+              <line x1="298" y1="208" x2="365" y2="274"
+                    stroke="#1C1608" stroke-width="24" stroke-linecap="round"/>
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -1143,7 +1687,7 @@
             </article>
           </div>
 
-          <div class="problem-closer" data-reveal>
+          <div class="problem-closer problem-statement" data-reveal>
             <strong>The problem is not information. The problem is execution.</strong>
             <div class="underline-accent" aria-hidden="true"></div>
           </div>
@@ -1162,51 +1706,157 @@
           <div class="what-grid">
             <div class="section-intro" data-reveal>
               <p class="section-label">WHAT WE ARE</p>
-              <h2 class="section-title" id="what-title">Execution infrastructure for disciplined capital deployment.</h2>
+              <h2 class="section-title" id="what-title">Expert-built trading systems. Deployed with discipline.</h2>
               <p class="section-copy">
-                Quantro takes your proven trading strategy — your rules, your risk parameters, your entry and exit logic — and deploys it as a live automated execution engine. Your system runs 24/7. Without hesitation. Without fatigue. Without deviation.
+                Quantro provides access to proven, expert-developed trading systems and automates their execution with precision. Deploy tested strategies built by seasoned traders — no screen time required, no emotional interference, no deviation from the rules.
               </p>
 
-              <div class="stats-row">
+              <div class="stats-row what-stats">
                 <article class="stat-card">
-                  <h3 class="stat-title">Non-custodial</h3>
-                  <p class="stat-copy">Your funds never leave your exchange.</p>
+                  <h3 class="stat-title stat-label">Non-custodial</h3>
+                  <p class="stat-copy stat-description">Your funds never leave your exchange.</p>
                 </article>
                 <article class="stat-card">
-                  <h3 class="stat-title">Rule-based</h3>
-                  <p class="stat-copy">Every trade triggered by predefined conditions.</p>
+                  <h3 class="stat-title stat-label">Rule-based</h3>
+                  <p class="stat-copy stat-description">Every trade triggered by predefined conditions.</p>
                 </article>
                 <article class="stat-card">
-                  <h3 class="stat-title">Transparent</h3>
-                  <p class="stat-copy">Full execution log. Nothing hidden.</p>
+                  <h3 class="stat-title stat-label">Transparent</h3>
+                  <p class="stat-copy stat-description">Full execution log. Nothing hidden.</p>
                 </article>
               </div>
             </div>
 
             <div class="pillars" data-reveal>
-              <article class="pillar">
+              <article class="pillar pillar-row">
                 <span class="pillar-number">1.</span>
                 <div>
                   <h3 class="pillar-title">PRECISION</h3>
-                  <p class="pillar-copy">Every action is triggered by predefined rules. No discretion.</p>
+                  <p class="pillar-copy pillar-body">Every action is triggered by predefined rules. No discretion.</p>
                 </div>
               </article>
-              <article class="pillar">
+              <article class="pillar pillar-row">
                 <span class="pillar-number">2.</span>
                 <div>
                   <h3 class="pillar-title">DISCIPLINE</h3>
-                  <p class="pillar-copy">Consistency creates long-term edge. Systems outperform impulses.</p>
+                  <p class="pillar-copy pillar-body">Consistency creates long-term edge. Systems outperform impulses.</p>
                 </div>
               </article>
-              <article class="pillar">
+              <article class="pillar pillar-row">
                 <span class="pillar-number">3.</span>
                 <div>
                   <h3 class="pillar-title">FREEDOM</h3>
-                  <p class="pillar-copy">Time is the ultimate return on investment.</p>
+                  <p class="pillar-copy pillar-body">Time is the ultimate return on investment.</p>
                 </div>
               </article>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div class="divider-shell"><div class="divider-rule" aria-hidden="true"></div></div>
+
+      <section class="section systems" id="systems" aria-labelledby="systems-title">
+        <div class="section-shell">
+          <div class="systems-header" data-reveal>
+            <h2 class="systems-title" id="systems-title">Systems built by seasoned traders. Verified before you deploy a single dollar.</h2>
+            <p class="systems-sub">Every system has a live track record. No theory. No backtests dressed up as performance.</p>
+          </div>
+
+          <div class="systems-grid">
+            <article class="system-card featured" data-reveal>
+              <div class="live-badge"><span class="live-dot" aria-hidden="true"></span>LIVE</div>
+              <span class="system-tag">Flagship system</span>
+              <h3 class="system-name">Candle Close<br>Metals System</h3>
+              <p class="system-market">XAUUSD · XAGUSD · Daily + H4</p>
+              <p class="system-desc">Developed by Quantro's co-founder over years of active metals trading. Entries and exits fire exclusively on confirmed candle closes — eliminating intrabar noise, discretionary calls, and emotional interference entirely.</p>
+              <div class="system-meta">
+                <div><div class="meta-label">Approach</div><div class="meta-value">Rules-only</div></div>
+                <div><div class="meta-label">Status</div><div class="meta-value accent">Deploying now</div></div>
+                <div><div class="meta-label">Track record</div><div class="meta-value">Live · verified</div></div>
+                <div><div class="meta-label">Capital</div><div class="meta-value">User-defined</div></div>
+              </div>
+            </article>
+
+            <article class="system-card" data-reveal>
+              <span class="system-tag">In development</span>
+              <h3 class="system-name">Session-Based<br>Forex System</h3>
+              <p class="system-market">EURUSD · GBPUSD · Session-open</p>
+              <p class="system-desc">Targets high-probability setups during London-New York overlap. Developed by an active forex trader with documented session-based execution history. Strict per-session risk limits.</p>
+              <div class="system-meta">
+                <div><div class="meta-label">Approach</div><div class="meta-value">Session-based</div></div>
+                <div><div class="meta-label">Status</div><div class="meta-value">Validation</div></div>
+              </div>
+            </article>
+
+            <article class="system-card" data-reveal>
+              <span class="system-tag">Roadmap</span>
+              <h3 class="system-name">Crypto Trend<br>Execution</h3>
+              <p class="system-market">BTC · ETH · Major alts · Daily</p>
+              <p class="system-desc">Trend-following system built for crypto's volatility profile by an experienced crypto trader. Adaptive sizing with hard drawdown controls. Non-custodial CEX execution.</p>
+              <div class="system-meta">
+                <div><div class="meta-label">Approach</div><div class="meta-value">Trend-following</div></div>
+                <div><div class="meta-label">Status</div><div class="meta-value">Planned</div></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="criteria" data-reveal>
+            <div class="criteria-label">Our standard</div>
+            <div class="criteria-items">
+              <div class="criteria-item">Live track record before platform deployment</div>
+              <div class="criteria-item">Fully documented rules — zero discretion</div>
+              <div class="criteria-item">Built and traded by the system's developer</div>
+              <div class="criteria-item">Risk parameters fixed — not adjustable mid-run</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-shell"><div class="divider-rule" aria-hidden="true"></div></div>
+
+      <section class="section founders" id="founders" aria-labelledby="founders-title">
+        <div class="section-shell">
+          <p class="section-label" data-reveal>BUILT BY TRADERS</p>
+          <div class="founders-intro" data-reveal>
+            <h2 class="founders-headline" id="founders-title">Quantro is not built by engineers who studied trading.<br><span class="amber">It is built by traders who learned to engineer.</span></h2>
+            <p class="founders-copy">The systems on this platform are not theoretical constructs. They are strategies the co-founders have traded with real capital, through live markets, through drawdowns and recoveries. The edge being automated is an edge that already exists.</p>
+          </div>
+
+          <div class="founders-grid">
+            <article class="founder-card" data-reveal>
+              <div class="founder-initial">C</div>
+              <h3 class="founder-name">Chris</h3>
+              <p class="founder-role">Co-Founder — Strategy & Markets</p>
+              <p class="founder-body">Active metals and forex trader. Developer of the candle-close execution framework that forms Quantro's flagship system. All trading-side product decisions — system development, validation criteria, and performance standards — are his responsibility.</p>
+              <div class="founder-points">
+                <div class="founder-points-label">Track record</div>
+                <p class="founder-point">Live metals execution — XAUUSD, XAGUSD — multi-year, verified</p>
+                <p class="founder-point">Candle-close methodology: rules-only, no intrabar entries, no predictions</p>
+                <p class="founder-point">Every system traded with personal capital before platform deployment</p>
+              </div>
+            </article>
+
+            <article class="founder-card" data-reveal>
+              <div class="founder-initial">S</div>
+              <h3 class="founder-name">Spencer</h3>
+              <p class="founder-role">Co-Founder — Technology & Infrastructure</p>
+              <p class="founder-body">Senior technical architect and CTO at 80Eight. Responsible for platform architecture, API security, encryption infrastructure, and execution engine reliability. The technology is built to institutional standards because the systems running on it demand it.</p>
+              <div class="founder-points">
+                <div class="founder-points-label">Technical foundation</div>
+                <p class="founder-point">Non-custodial architecture — withdrawal permissions never required</p>
+                <p class="founder-point">AES-256 encrypted API key storage, execution isolation per user</p>
+                <p class="founder-point">Independent security audit completed before public launch</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-statement" aria-label="Quantro systems statement">
+        <div class="section-shell">
+          <div class="bottom-statement-text">The edge being automated is an edge that already exists.</div>
+          <div class="bottom-statement-rule" aria-hidden="true"></div>
         </div>
       </section>
 
@@ -1218,31 +1868,31 @@
             <h2 class="section-title" id="how-title">Deploy your strategy. It runs while you sleep.</h2>
           </div>
 
-          <div class="steps">
-            <article class="step-card" data-reveal>
+          <div class="steps steps-grid">
+            <article class="step-card step" data-reveal>
               <span class="step-number" data-target="1">01</span>
-              <h3>Connect your exchange</h3>
-              <p>
+              <h3 class="step-title">Connect your exchange</h3>
+              <p class="step-body">
                 Link your existing exchange account via API. Quantro never holds funds. Withdrawal permissions are never required.
               </p>
             </article>
-            <article class="step-card" data-reveal>
+            <article class="step-card step" data-reveal>
               <span class="step-number" data-target="2">02</span>
-              <h3>Deploy a proven system</h3>
-              <p>
+              <h3 class="step-title">Deploy a proven system</h3>
+              <p class="step-body">
                 Select a validated, backtested trading system. Set your risk parameters — position size, stop-loss, maximum drawdown.
               </p>
             </article>
-            <article class="step-card" data-reveal>
+            <article class="step-card step" data-reveal>
               <span class="step-number" data-target="3">03</span>
-              <h3>Execute without emotion</h3>
-              <p>
+              <h3 class="step-title">Execute without emotion</h3>
+              <p class="step-body">
                 Your strategy runs exactly as designed, 24/7. No hesitation. No second-guessing. No fatigue. Pure execution.
               </p>
             </article>
           </div>
 
-          <div class="callout-box" data-reveal>
+          <div class="callout-box promise-box" data-reveal>
             <strong>We do not promise certainty.</strong>
             <strong>We promise discipline.</strong>
           </div>
@@ -1264,23 +1914,28 @@
           <div class="why-grid">
             <div data-reveal>
               <p class="section-label">WHY IT MATTERS</p>
-              <h2 class="quote-display" id="why-title">"Good traders build systems. Great traders trust them."</h2>
+              <div class="brand-statement" id="why-title">
+                <p class="brand-statement-text">
+                  Good traders build systems.<br>
+                  Great traders trust them.
+                </p>
+              </div>
             </div>
 
             <div class="trust-list" data-reveal>
-              <article class="trust-item">
+              <article class="trust-item trust-point">
                 <h3>Non-custodial by design</h3>
                 <p class="trust-copy">
                   Your capital stays in your exchange account. Quantro executes on your behalf but never controls your funds. This is not negotiable.
                 </p>
               </article>
-              <article class="trust-item">
+              <article class="trust-item trust-point">
                 <h3>Strategy-verified only</h3>
                 <p class="trust-copy">
                   Every system on the platform is tested and validated before deployment. We do not trade signals. We do not speculate. We execute rules.
                 </p>
               </article>
-              <article class="trust-item">
+              <article class="trust-item trust-point">
                 <h3>Performance aligned</h3>
                 <p class="trust-copy">
                   We only earn when you profit. Our fee structure ties platform success directly to user results.
@@ -1309,29 +1964,26 @@
               </p>
             </div>
 
-            <div class="early-benefits">
+            <div class="early-benefits benefits-grid">
               <article class="benefit-card" data-reveal>
-                <span class="benefit-label">Verified performance data</span>
-                <h3>From live deployment</h3>
-                <p>Live deployment of the founding metals execution system.</p>
+                <div class="benefit-label">Verified performance data</div>
+                <p class="benefit-body">From live deployment of the founding metals execution system — before public launch.</p>
               </article>
               <article class="benefit-card" data-reveal>
-                <span class="benefit-label">Priority onboarding</span>
-                <h3>Direct access to the team</h3>
-                <p>Direct access to the founding team during setup.</p>
+                <div class="benefit-label">Priority onboarding</div>
+                <p class="benefit-body">Direct access to the founding team during setup.</p>
               </article>
               <article class="benefit-card" data-reveal>
-                <span class="benefit-label">Community integration</span>
-                <h3>Launches inside Whale Room</h3>
-                <p>Access through Whale Room before public launch.</p>
+                <div class="benefit-label">Community integration</div>
+                <p class="benefit-body">Access through Whale Room before public launch.</p>
               </article>
             </div>
 
             <p class="join-label" data-reveal>Join the waitlist</p>
-            <form class="waitlist-form js-waitlist-form" action="#" method="post" data-reveal>
+            <form class="cta-form js-waitlist-form" action="#" method="post" data-reveal>
               <label class="visually-hidden" for="early-email">Email address</label>
               <input
-                class="waitlist-input"
+                class="cta-input"
                 id="early-email"
                 name="email"
                 type="email"
@@ -1340,7 +1992,7 @@
                 required
                 aria-label="Email address for waitlist"
               />
-              <button class="waitlist-button" type="submit" aria-label="Request early access">
+              <button class="cta-button" type="submit" aria-label="Request early access">
                 Request Early Access
               </button>
             </form>
@@ -1391,110 +2043,91 @@
 
     <script>
       (function () {
-        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var progressBar = document.getElementById('scroll-progress-bar');
-        var loadItems = document.querySelectorAll('[data-load]');
-        var revealItems = document.querySelectorAll('[data-reveal]');
-        var forms = document.querySelectorAll('.js-waitlist-form');
-        var stepNumbers = document.querySelectorAll('.step-number');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const scrollProgress = document.getElementById('scroll-progress');
 
         function updateProgress() {
-          var scrollTop = window.scrollY || window.pageYOffset;
-          var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-          var percent = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
-          progressBar.style.width = percent + '%';
-        }
-
-        function animateNumber(node) {
-          if (node.dataset.animated === 'true' || reduceMotion) {
-            return;
-          }
-
-          node.dataset.animated = 'true';
-          var target = Number(node.getAttribute('data-target'));
-          var current = 0;
-
-          function tick() {
-            current += 1;
-            node.textContent = String(current).padStart(2, '0');
-            if (current < target) {
-              window.setTimeout(tick, 110);
-            }
-          }
-
-          tick();
-        }
-
-        function revealImmediately() {
-          loadItems.forEach(function (item) {
-            item.classList.add('is-visible');
-          });
-          revealItems.forEach(function (item) {
-            item.classList.add('is-visible');
-          });
-          document.querySelectorAll('.problem-card, .step-card, .benefit-card').forEach(function (item) {
-            item.classList.add('is-visible');
-          });
-          document.querySelectorAll('.hero-watermark').forEach(function (item) {
-            item.classList.add('is-visible');
-          });
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          scrollProgress.style.width = progress + '%';
         }
 
         if (!reduceMotion) {
-          loadItems.forEach(function (item) {
+          const heroElements = [
+            { el: document.querySelector('.coming-soon-label'), delay: 100 },
+            { el: document.querySelector('.hero-headline'), delay: 200 },
+            { el: document.querySelector('.hero-subhead'), delay: 340 },
+            { el: document.querySelector('.hero-body'), delay: 440 },
+            { el: document.querySelector('.hero-cta'), delay: 540 },
+            { el: document.querySelector('.hero-trust'), delay: 620 },
+            { el: document.querySelector('.hero-watermark'), delay: 800 },
+          ];
+
+          heroElements.forEach(function (item) {
+            if (!item.el) {
+              return;
+            }
+
+            item.el.style.opacity = '0';
+            item.el.style.transform = 'translateY(18px)';
+            item.el.style.transition = 'opacity 600ms ease, transform 600ms ease';
+
+            if (item.el.classList.contains('hero-watermark')) {
+              item.el.style.transform = 'translateY(-50%)';
+            }
+
             window.setTimeout(function () {
-              item.classList.add('is-visible');
-            }, Number((item.style.transitionDelay || '0ms').replace('ms', '')));
+              item.el.style.opacity = '1';
+              item.el.style.transform = item.el.classList.contains('hero-watermark')
+                ? 'translateY(-50%)'
+                : 'translateY(0)';
+            }, item.delay);
           });
 
-          window.setTimeout(function () {
-            document.querySelectorAll('.hero-watermark').forEach(function (item) {
-              item.classList.add('is-visible');
-            });
-          }, 620);
+          const revealElements = document.querySelectorAll(
+            '[data-reveal], .problem-card, .step, .what-grid, .pillar-row, .benefit-card, .trust-point, .system-card, .founder-card'
+          );
 
-          var observer = new IntersectionObserver(
+          const revealObserver = new IntersectionObserver(
             function (entries) {
               entries.forEach(function (entry) {
                 if (!entry.isIntersecting) {
                   return;
                 }
 
-                entry.target.classList.add('is-visible');
+                const siblings = Array.prototype.slice.call(entry.target.parentElement.children);
+                const index = siblings.indexOf(entry.target);
 
-                if (entry.target.classList.contains('step-card')) {
-                  var number = entry.target.querySelector('.step-number');
-                  if (number) {
-                    animateNumber(number);
-                  }
-                }
+                window.setTimeout(function () {
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
+                }, Math.max(index, 0) * 90);
 
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
               });
             },
-            { threshold: 0.15 }
+            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
           );
 
-          revealItems.forEach(function (item) {
-            observer.observe(item);
+          revealElements.forEach(function (el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 550ms ease, transform 550ms ease';
+            revealObserver.observe(el);
           });
-          document.querySelectorAll('.problem-card, .step-card, .benefit-card').forEach(function (item) {
-            observer.observe(item);
-          });
-        } else {
-          revealImmediately();
         }
 
         window.addEventListener('scroll', updateProgress, { passive: true });
         updateProgress();
 
-        forms.forEach(function (form) {
+        document.querySelectorAll('.cta-form').forEach(function (form) {
           form.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            var input = form.querySelector('.waitlist-input');
-            var button = form.querySelector('.waitlist-button');
-            var status = form.nextElementSibling;
+            const input = form.querySelector('.cta-input');
+            const button = form.querySelector('.cta-button');
+            const status = form.nextElementSibling;
 
             if (!input || !button || !input.checkValidity()) {
               if (status) {
@@ -1505,12 +2138,13 @@
 
             button.textContent = "You're on the list ✓";
             button.classList.add('is-success');
-            button.setAttribute('disabled', 'disabled');
-            input.setAttribute('disabled', 'disabled');
+            input.value = '';
+            input.disabled = true;
+            button.disabled = true;
 
-              if (status) {
-                status.textContent = 'Request noted in this preview build. Connect your live form endpoint before launch.';
-              }
+            if (status) {
+              status.textContent = 'Request noted in this preview build. Connect your live form endpoint before launch.';
+            }
           });
         });
       })();
