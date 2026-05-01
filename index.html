@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantro — Automated Execution. Proven Systems. Zero Emotion.</title>
+    <meta
+      name="description"
+      content="Quantro automates proven trading strategies through disciplined rule-based execution. Non-custodial. Performance-aligned. Built for traders who know their edge."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Quantro — Automated Trading Execution" />
+    <meta
+      property="og:description"
+      content="The execution layer for disciplined capital deployment. Coming soon."
+    />
+    <meta property="og:url" content="https://quantro.bot" />
+    <meta property="og:site_name" content="Quantro" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Quantro — Automated Trading Execution" />
+    <meta
+      name="twitter:description"
+      content="The execution layer for disciplined capital deployment. Coming soon."
+    />
+    <meta name="theme-color" content="#0B0B0D" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230B0B0D'/%3E%3Cpath d='M 37.5 28.5 A 15 15 0 1 0 33 35.5' stroke='%23FAFAF7' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Cline x1='35' y1='32' x2='43' y2='40' stroke='%23E4A340' stroke-width='4.2' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800&display=swap');
+
+      :root {
+        --black: #0b0b0d;
+        --near-black: #17150f;
+        --amber: #b07a1a;
+        --amber-bright: #e4a340;
+        --amber-flash: #f4b840;
+        --warm-white: #fbf9f6;
+        --off-white: #fafaf7;
+        --muted: #8a8070;
+        --div: #2a2820;
+        --panel: #1a1810;
+        --display: clamp(52px, 8vw, 96px);
+        --h1: clamp(32px, 5vw, 56px);
+        --h2: clamp(20px, 3vw, 28px);
+        --body-lg: 18px;
+        --body: 16px;
+        --label: 11px;
+        --nav-height: 84px;
+        --radius-lg: 26px;
+        --radius-md: 18px;
+        --shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+        color-scheme: dark;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        overflow-x: hidden;
+        background:
+          radial-gradient(circle at 78% 14%, rgba(228, 163, 64, 0.08), transparent 24%),
+          radial-gradient(circle at 18% 8%, rgba(228, 163, 64, 0.04), transparent 18%),
+          var(--black);
+        color: var(--warm-white);
+        font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+        font-size: var(--body);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      svg {
+        display: block;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .top-rule {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 30;
+        width: 100%;
+        height: 3px;
+        background: rgba(228, 163, 64, 0.34);
+      }
+
+      .scroll-progress {
+        position: fixed;
+        top: 3px;
+        left: 0;
+        z-index: 29;
+        width: 100%;
+        height: 3px;
+        background: transparent;
+        pointer-events: none;
+      }
+
+      .scroll-progress-bar {
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, var(--amber), var(--amber-bright), var(--amber-flash));
+        box-shadow: 0 0 22px rgba(228, 163, 64, 0.45);
+      }
+
+      .site-nav {
+        position: fixed;
+        top: 6px;
+        left: 0;
+        z-index: 20;
+        width: 100%;
+        backdrop-filter: blur(12px);
+        background: rgba(11, 11, 13, 0.68);
+        border-bottom: 1px solid rgba(42, 40, 32, 0.92);
+      }
+
+      .nav-shell,
+      .section-shell,
+      .footer-shell {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .nav-shell {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: var(--nav-height);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        color: var(--off-white);
+      }
+
+      .brand-mark svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .brand-mark .tail {
+        transition: stroke 300ms ease, filter 300ms ease;
+      }
+
+      .brand-mark .pulse-ring {
+        opacity: 0;
+        transform-origin: center;
+      }
+
+      .brand:hover .tail,
+      .brand:focus-visible .tail {
+        stroke: var(--amber-flash);
+        filter: drop-shadow(0 0 10px rgba(244, 184, 64, 0.4));
+      }
+
+      .brand:hover .pulse-ring,
+      .brand:focus-visible .pulse-ring {
+        animation: pulse-ring 600ms ease-out 1;
+      }
+
+      .brand-wordmark {
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+      }
+
+      .nav-cta,
+      .waitlist-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 22px;
+        border: 1px solid var(--amber-bright);
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        transition: background-color 220ms ease, color 220ms ease, transform 220ms ease,
+          box-shadow 220ms ease, border-color 220ms ease;
+      }
+
+      .nav-cta {
+        color: var(--amber-bright);
+        background: transparent;
+      }
+
+      .nav-cta:hover,
+      .nav-cta:focus-visible {
+        background: var(--amber-bright);
+        color: var(--near-black);
+      }
+
+      .page-main {
+        display: block;
+      }
+
+      .section {
+        position: relative;
+        scroll-margin-top: calc(var(--nav-height) + 20px);
+      }
+
+      .section-shell {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-label,
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 16px;
+        color: var(--amber-bright);
+        font-size: var(--label);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--amber-bright);
+        box-shadow: 0 0 14px rgba(228, 163, 64, 0.45);
+        animation: pulse-dot 1.8s ease-in-out infinite;
+      }
+
+      .section-title,
+      .hero-headline,
+      .quote-display,
+      .early-title {
+        margin: 0;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 0.96;
+      }
+
+      .hero {
+        min-height: calc(100svh - 6px);
+        overflow: clip;
+        background:
+          linear-gradient(180deg, rgba(26, 24, 16, 0.24), transparent 18%),
+          var(--black);
+      }
+
+      .hero .section-shell {
+        display: flex;
+        align-items: center;
+        min-height: calc(100svh - 6px);
+        padding: 138px 0 96px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+        width: min(720px, 100%);
+      }
+
+      .hero-headline {
+        font-size: var(--display);
+      }
+
+      .hero-headline .line {
+        display: block;
+      }
+
+      .hero-headline .line-amber {
+        color: var(--amber-bright);
+      }
+
+      .hero-subheadline {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: var(--h2);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-body {
+        max-width: 38rem;
+        margin: 22px 0 0;
+        color: var(--off-white);
+        font-size: var(--body-lg);
+      }
+
+      .hero-watermark {
+        position: absolute;
+        top: 50%;
+        right: -110px;
+        width: min(58vw, 820px);
+        transform: translateY(-50%);
+        opacity: 0.82;
+        pointer-events: none;
+      }
+
+      .hero-watermark path,
+      .hero-watermark line {
+        stroke: #1a1710;
+      }
+
+      .waitlist-form {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+        max-width: 620px;
+        margin-top: 28px;
+      }
+
+      .waitlist-input {
+        min-height: 56px;
+        width: 100%;
+        padding: 0 18px;
+        color: var(--warm-white);
+        background: rgba(23, 21, 15, 0.88);
+        border: 1px solid var(--div);
+        border-radius: 999px;
+        outline: none;
+        transition: border-color 300ms ease, box-shadow 300ms ease;
+      }
+
+      .waitlist-input::placeholder {
+        color: rgba(250, 250, 247, 0.48);
+      }
+
+      .waitlist-input:focus {
+        border-color: var(--amber-bright);
+        box-shadow: 0 0 0 4px rgba(228, 163, 64, 0.14);
+      }
+
+      .waitlist-button {
+        color: var(--near-black);
+        background: var(--amber-bright);
+        box-shadow: 0 16px 40px rgba(228, 163, 64, 0.18);
+        cursor: pointer;
+      }
+
+      .waitlist-button:hover,
+      .waitlist-button:focus-visible {
+        background: var(--amber-flash);
+        border-color: var(--amber-flash);
+        transform: scale(1.02);
+      }
+
+      .waitlist-button:active {
+        transform: scale(0.98);
+      }
+
+      .waitlist-button.is-success {
+        background: var(--amber-flash);
+        border-color: var(--amber-flash);
+        animation: button-flash 420ms ease;
+      }
+
+      .hero-note,
+      .form-status,
+      .callout-note,
+      .trust-disclaimer {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .hero-note {
+        margin: 14px 0 0;
+      }
+
+      .form-status {
+        min-height: 20px;
+        margin: 10px 0 0;
+      }
+
+      .divider-rule,
+      .footer-rule {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(228, 163, 64, 0.65), transparent);
+      }
+
+      .divider-rule {
+        margin: 0;
+      }
+
+      .divider-shell {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 24px 0;
+      }
+
+      .divider-mark {
+        display: grid;
+        place-items: center;
+      }
+
+      .divider-mark svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .divider-mark path,
+      .divider-mark line {
+        stroke: var(--div);
+      }
+
+      .problem {
+        background:
+          linear-gradient(180deg, rgba(23, 21, 15, 0.96), rgba(11, 11, 13, 1)),
+          var(--near-black);
+      }
+
+      .problem .section-shell,
+      .what .section-shell,
+      .how .section-shell,
+      .why .section-shell,
+      .early .section-shell {
+        padding: 96px 0;
+      }
+
+      .problem-header,
+      .section-intro {
+        max-width: 860px;
+      }
+
+      .problem-title,
+      .section-title,
+      .early-title {
+        font-size: var(--h1);
+      }
+
+      .problem-subtitle,
+      .section-copy,
+      .early-copy,
+      .trust-copy {
+        margin: 18px 0 0;
+        color: var(--off-white);
+        font-size: var(--body-lg);
+      }
+
+      .problem-grid,
+      .early-benefits {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 40px;
+      }
+
+      .problem-card,
+      .benefit-card,
+      .step-card {
+        position: relative;
+        min-height: 100%;
+        padding: 26px 24px 24px;
+        background: rgba(26, 24, 16, 0.92);
+        border: 1px solid rgba(42, 40, 32, 0.94);
+        border-left: 2px solid var(--amber-bright);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow);
+      }
+
+      .problem-card-number,
+      .step-number,
+      .benefit-label {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: var(--amber-bright);
+        font-size: var(--label);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .problem-card h3,
+      .benefit-card h3,
+      .step-card h3,
+      .pillar-title,
+      .trust-list h3,
+      .stat-title {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .problem-card p,
+      .benefit-card p,
+      .step-card p,
+      .pillar-copy,
+      .trust-list p,
+      .stat-copy {
+        margin: 12px 0 0;
+        color: var(--off-white);
+      }
+
+      .problem-closer {
+        margin: 42px auto 0;
+        max-width: 720px;
+        text-align: center;
+      }
+
+      .problem-closer strong,
+      .why-closer strong {
+        display: inline-block;
+        font-size: clamp(22px, 3vw, 30px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .underline-accent {
+        width: 120px;
+        height: 3px;
+        margin: 18px auto 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, var(--amber-bright), transparent);
+      }
+
+      .what {
+        background:
+          linear-gradient(180deg, rgba(11, 11, 13, 1), rgba(23, 21, 15, 0.82)),
+          var(--black);
+      }
+
+      .what-grid,
+      .why-grid,
+      .footer-shell {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+        gap: 42px;
+        align-items: start;
+      }
+
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .stat-card {
+        padding: 20px 18px;
+        border: 1px solid var(--div);
+        border-radius: var(--radius-md);
+        background: rgba(23, 21, 15, 0.54);
+      }
+
+      .stat-title {
+        font-size: 15px;
+        color: var(--warm-white);
+      }
+
+      .stat-copy {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .pillars {
+        border-top: 1px solid rgba(228, 163, 64, 0.35);
+      }
+
+      .pillar {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 18px;
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(228, 163, 64, 0.2);
+      }
+
+      .pillar-number {
+        color: var(--amber-bright);
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .how {
+        background:
+          linear-gradient(180deg, rgba(23, 21, 15, 0.82), rgba(11, 11, 13, 1)),
+          var(--black);
+      }
+
+      .steps {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 42px;
+      }
+
+      .steps::before {
+        content: "";
+        position: absolute;
+        top: 42px;
+        left: 15%;
+        right: 15%;
+        border-top: 1px dashed rgba(228, 163, 64, 0.42);
+      }
+
+      .step-card {
+        border-left: 1px solid rgba(228, 163, 64, 0.25);
+        background: rgba(26, 24, 16, 0.88);
+      }
+
+      .step-number {
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .callout-box {
+        margin-top: 38px;
+        padding: 28px;
+        border: 1px solid rgba(228, 163, 64, 0.72);
+        border-radius: var(--radius-md);
+        background: transparent;
+        text-align: center;
+      }
+
+      .callout-box strong {
+        display: block;
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      .callout-box strong + strong {
+        margin-top: 6px;
+      }
+
+      .callout-note {
+        margin: 16px auto 0;
+        max-width: 720px;
+        text-align: center;
+      }
+
+      .why {
+        background:
+          radial-gradient(circle at 10% 20%, rgba(228, 163, 64, 0.08), transparent 22%),
+          linear-gradient(180deg, rgba(23, 21, 15, 1), rgba(11, 11, 13, 1)),
+          var(--near-black);
+      }
+
+      .quote-display {
+        color: var(--amber-bright);
+        font-size: clamp(42px, 6vw, 80px);
+        max-width: 12ch;
+      }
+
+      .trust-list {
+        display: grid;
+        gap: 24px;
+      }
+
+      .trust-item {
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(228, 163, 64, 0.18);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .why-closer {
+        margin-top: 44px;
+        text-align: center;
+      }
+
+      .why-closer .divider-rule {
+        margin-bottom: 24px;
+      }
+
+      .early {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        background:
+          radial-gradient(circle at 50% 10%, rgba(228, 163, 64, 0.08), transparent 24%),
+          var(--black);
+      }
+
+      .early-panel {
+        padding: 42px;
+        border: 1px solid rgba(42, 40, 32, 0.94);
+        border-radius: var(--radius-lg);
+        background: linear-gradient(180deg, rgba(23, 21, 15, 0.88), rgba(11, 11, 13, 0.96));
+        box-shadow: var(--shadow);
+      }
+
+      .early-header {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .early-benefits {
+        margin-top: 34px;
+      }
+
+      .benefit-card {
+        border-left: 1px solid rgba(228, 163, 64, 0.24);
+        background: rgba(26, 24, 16, 0.82);
+      }
+
+      .join-label {
+        margin: 34px 0 0;
+        color: var(--warm-white);
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .early .waitlist-form {
+        margin: 14px auto 0;
+      }
+
+      .trust-signals {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .trust-signals .dot {
+        color: var(--amber-bright);
+      }
+
+      .site-footer {
+        background: var(--near-black);
+        border-top: 1px solid rgba(228, 163, 64, 0.18);
+      }
+
+      .footer-shell {
+        padding: 26px 0 34px;
+        gap: 22px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .footer-brand .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .footer-wordmark {
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+      }
+
+      .footer-domain {
+        margin-top: 4px;
+        color: var(--amber-bright);
+        font-size: 14px;
+      }
+
+      .footer-tagline,
+      .footer-copy,
+      .footer-disclaimer {
+        color: var(--off-white);
+        font-size: 15px;
+      }
+
+      .footer-tagline {
+        text-align: center;
+      }
+
+      .footer-copy {
+        text-align: right;
+      }
+
+      .footer-disclaimer {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 0 0 30px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      .js [data-load],
+      .js [data-reveal],
+      .js .hero-watermark {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .js .hero-watermark {
+        transform: translateY(-50%);
+      }
+
+      .js [data-load].is-visible,
+      .js [data-reveal].is-visible {
+        opacity: 1;
+        transform: none;
+        transition: opacity 720ms ease, transform 720ms ease;
+      }
+
+      .js .hero-watermark.is-visible {
+        opacity: 0.82;
+        transform: translateY(-50%);
+        transition: opacity 1200ms ease;
+      }
+
+      .js .problem-card,
+      .js .step-card,
+      .js .benefit-card {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      .js .problem-card.is-visible,
+      .js .step-card.is-visible,
+      .js .benefit-card.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: opacity 680ms ease, transform 680ms ease;
+      }
+
+      .js .problem-card:nth-child(2).is-visible,
+      .js .step-card:nth-child(2).is-visible,
+      .js .benefit-card:nth-child(2).is-visible {
+        transition-delay: 100ms;
+      }
+
+      .js .problem-card:nth-child(3).is-visible,
+      .js .step-card:nth-child(3).is-visible,
+      .js .benefit-card:nth-child(3).is-visible {
+        transition-delay: 200ms;
+      }
+
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+
+        50% {
+          transform: scale(1.4);
+          opacity: 0.55;
+        }
+      }
+
+      @keyframes pulse-ring {
+        0% {
+          opacity: 0.48;
+          transform: scale(0.65);
+        }
+
+        100% {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+
+      @keyframes button-flash {
+        0% {
+          box-shadow: 0 0 0 rgba(244, 184, 64, 0);
+        }
+
+        50% {
+          box-shadow: 0 0 0 10px rgba(244, 184, 64, 0.18);
+        }
+
+        100% {
+          box-shadow: 0 0 0 rgba(244, 184, 64, 0);
+        }
+      }
+
+      @media (max-width: 960px) {
+        .what-grid,
+        .why-grid,
+        .footer-shell,
+        .problem-grid,
+        .early-benefits,
+        .steps,
+        .stats-row {
+          grid-template-columns: 1fr;
+        }
+
+        .steps::before {
+          display: none;
+        }
+
+        .footer-tagline,
+        .footer-copy {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --nav-height: 76px;
+        }
+
+        .nav-shell,
+        .section-shell,
+        .footer-shell,
+        .divider-shell,
+        .footer-disclaimer {
+          width: min(100% - 24px, 1160px);
+        }
+
+        .brand-wordmark {
+          display: none;
+        }
+
+        .nav-cta {
+          min-height: 46px;
+          padding-inline: 16px;
+          font-size: 13px;
+        }
+
+        .hero .section-shell {
+          padding: 118px 0 74px;
+          align-items: flex-start;
+        }
+
+        .hero-watermark {
+          top: auto;
+          bottom: 32px;
+          right: -96px;
+          width: 86vw;
+          transform: none;
+        }
+
+        .js .hero-watermark {
+          transform: none;
+        }
+
+        .js .hero-watermark.is-visible {
+          transform: none;
+        }
+
+        .waitlist-form {
+          grid-template-columns: 1fr;
+        }
+
+        .early-panel {
+          padding: 30px 18px;
+        }
+
+        .quote-display {
+          max-width: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .eyebrow-dot,
+        .brand:hover .pulse-ring,
+        .brand:focus-visible .pulse-ring {
+          animation: none;
+        }
+
+        .js [data-load],
+        .js [data-reveal],
+        .js .hero-watermark,
+        .js .problem-card,
+        .js .step-card,
+        .js .benefit-card {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-rule" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-shell" data-load style="transition-delay: 0ms">
+        <a class="brand" href="#hero" aria-label="Quantro home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="pulse-ring" cx="24" cy="24" r="18.5" stroke="rgba(228, 163, 64, 0.42)" stroke-width="1.2" />
+              <path
+                d="M 37.5 28.5 A 15 15 0 1 0 33 35.5"
+                stroke="currentColor"
+                stroke-width="3.2"
+                stroke-linecap="round"
+                fill="none"
+              />
+              <line
+                class="tail"
+                x1="35"
+                y1="32"
+                x2="43"
+                y2="40"
+                stroke="#E4A340"
+                stroke-width="3.4"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span class="brand-wordmark">QUANTRO</span>
+        </a>
+        <a class="nav-cta" href="#early" aria-label="Get early access to Quantro">Get Early Access</a>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <section class="section hero" id="hero" aria-labelledby="hero-title">
+        <div class="section-shell">
+          <div class="hero-copy">
+            <p class="eyebrow" data-load style="transition-delay: 80ms">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              COMING SOON
+            </p>
+            <h1 class="hero-headline" id="hero-title">
+              <span class="line" data-load style="transition-delay: 160ms">The edge was never</span>
+              <span class="line line-amber" data-load style="transition-delay: 240ms">in watching charts.</span>
+            </h1>
+            <p class="hero-subheadline" data-load style="transition-delay: 320ms">It was always in execution.</p>
+            <p class="hero-body" data-load style="transition-delay: 400ms">
+              Quantro automates proven trading systems so your capital works with discipline — without you at the screen.
+            </p>
+
+            <form class="waitlist-form js-waitlist-form" action="#" method="post" data-load style="transition-delay: 480ms">
+              <label class="visually-hidden" for="hero-email">Email address</label>
+              <input
+                class="waitlist-input"
+                id="hero-email"
+                name="email"
+                type="email"
+                placeholder="your@email.com"
+                autocomplete="email"
+                required
+                aria-label="Email address for early access"
+              />
+              <button class="waitlist-button" type="submit" aria-label="Request early access">
+                Request Early Access
+              </button>
+            </form>
+            <p class="hero-note" data-load style="transition-delay: 560ms">Non-custodial. Your capital. Your keys. Always.</p>
+            <p class="form-status" aria-live="polite"></p>
+          </div>
+
+          <svg class="hero-watermark" viewBox="0 0 640 640" aria-hidden="true">
+            <path
+              d="M 470 320
+                 A 190 190 0 1 0 410 415"
+              stroke-width="42"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <line x1="436" y1="396" x2="546" y2="506" stroke-width="46" stroke-linecap="round" />
+          </svg>
+        </div>
+      </section>
+
+      <div class="divider-shell"><div class="divider-rule" aria-hidden="true"></div></div>
+
+      <section class="section problem" id="problem" aria-labelledby="problem-title">
+        <div class="section-shell">
+          <div class="problem-header" data-reveal>
+            <h2 class="section-title" id="problem-title">Most traders don't fail because they lack strategy.</h2>
+            <p class="problem-subtitle">They fail because they can't execute it consistently.</p>
+          </div>
+
+          <div class="problem-grid">
+            <article class="problem-card" data-reveal>
+              <span class="problem-card-number">01</span>
+              <h3>Emotional execution</h3>
+              <p>
+                You abandon your system at the worst possible moment — when pressure is highest and consistency matters most.
+              </p>
+            </article>
+            <article class="problem-card" data-reveal>
+              <span class="problem-card-number">02</span>
+              <h3>Time dependency</h3>
+              <p>
+                Profitable systems require constant screen time. Most traders have lives, jobs, and obligations that prevent this.
+              </p>
+            </article>
+            <article class="problem-card" data-reveal>
+              <span class="problem-card-number">03</span>
+              <h3>Inconsistency</h3>
+              <p>
+                Same trader. Same strategy. Different results. Because human execution introduces variance every single time.
+              </p>
+            </article>
+          </div>
+
+          <div class="problem-closer" data-reveal>
+            <strong>The problem is not information. The problem is execution.</strong>
+            <div class="underline-accent" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-shell divider-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 37.5 28.5 A 15 15 0 1 0 33 35.5" stroke-width="3.2" stroke-linecap="round" />
+          <line x1="35" y1="32" x2="43" y2="40" stroke-width="3.4" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <section class="section what" id="what" aria-labelledby="what-title">
+        <div class="section-shell">
+          <div class="what-grid">
+            <div class="section-intro" data-reveal>
+              <p class="section-label">WHAT WE ARE</p>
+              <h2 class="section-title" id="what-title">Execution infrastructure for disciplined capital deployment.</h2>
+              <p class="section-copy">
+                Quantro takes your proven trading strategy — your rules, your risk parameters, your entry and exit logic — and deploys it as a live automated execution engine. Your system runs 24/7. Without hesitation. Without fatigue. Without deviation.
+              </p>
+
+              <div class="stats-row">
+                <article class="stat-card">
+                  <h3 class="stat-title">Non-custodial</h3>
+                  <p class="stat-copy">Your funds never leave your exchange.</p>
+                </article>
+                <article class="stat-card">
+                  <h3 class="stat-title">Rule-based</h3>
+                  <p class="stat-copy">Every trade triggered by predefined conditions.</p>
+                </article>
+                <article class="stat-card">
+                  <h3 class="stat-title">Transparent</h3>
+                  <p class="stat-copy">Full execution log. Nothing hidden.</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="pillars" data-reveal>
+              <article class="pillar">
+                <span class="pillar-number">1.</span>
+                <div>
+                  <h3 class="pillar-title">PRECISION</h3>
+                  <p class="pillar-copy">Every action is triggered by predefined rules. No discretion.</p>
+                </div>
+              </article>
+              <article class="pillar">
+                <span class="pillar-number">2.</span>
+                <div>
+                  <h3 class="pillar-title">DISCIPLINE</h3>
+                  <p class="pillar-copy">Consistency creates long-term edge. Systems outperform impulses.</p>
+                </div>
+              </article>
+              <article class="pillar">
+                <span class="pillar-number">3.</span>
+                <div>
+                  <h3 class="pillar-title">FREEDOM</h3>
+                  <p class="pillar-copy">Time is the ultimate return on investment.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-shell"><div class="divider-rule" aria-hidden="true"></div></div>
+
+      <section class="section how" id="how" aria-labelledby="how-title">
+        <div class="section-shell">
+          <div class="section-intro" data-reveal>
+            <h2 class="section-title" id="how-title">Deploy your strategy. It runs while you sleep.</h2>
+          </div>
+
+          <div class="steps">
+            <article class="step-card" data-reveal>
+              <span class="step-number" data-target="1">01</span>
+              <h3>Connect your exchange</h3>
+              <p>
+                Link your existing exchange account via API. Quantro never holds funds. Withdrawal permissions are never required.
+              </p>
+            </article>
+            <article class="step-card" data-reveal>
+              <span class="step-number" data-target="2">02</span>
+              <h3>Deploy a proven system</h3>
+              <p>
+                Select a validated, backtested trading system. Set your risk parameters — position size, stop-loss, maximum drawdown.
+              </p>
+            </article>
+            <article class="step-card" data-reveal>
+              <span class="step-number" data-target="3">03</span>
+              <h3>Execute without emotion</h3>
+              <p>
+                Your strategy runs exactly as designed, 24/7. No hesitation. No second-guessing. No fatigue. Pure execution.
+              </p>
+            </article>
+          </div>
+
+          <div class="callout-box" data-reveal>
+            <strong>We do not promise certainty.</strong>
+            <strong>We promise discipline.</strong>
+          </div>
+          <p class="callout-note" data-reveal>
+            Markets carry risk. What Quantro guarantees is that your strategy executes exactly as designed — every time.
+          </p>
+        </div>
+      </section>
+
+      <div class="divider-shell divider-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 37.5 28.5 A 15 15 0 1 0 33 35.5" stroke-width="3.2" stroke-linecap="round" />
+          <line x1="35" y1="32" x2="43" y2="40" stroke-width="3.4" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <section class="section why" id="why" aria-labelledby="why-title">
+        <div class="section-shell">
+          <div class="why-grid">
+            <div data-reveal>
+              <p class="section-label">WHY IT MATTERS</p>
+              <h2 class="quote-display" id="why-title">"Good traders build systems. Great traders trust them."</h2>
+            </div>
+
+            <div class="trust-list" data-reveal>
+              <article class="trust-item">
+                <h3>Non-custodial by design</h3>
+                <p class="trust-copy">
+                  Your capital stays in your exchange account. Quantro executes on your behalf but never controls your funds. This is not negotiable.
+                </p>
+              </article>
+              <article class="trust-item">
+                <h3>Strategy-verified only</h3>
+                <p class="trust-copy">
+                  Every system on the platform is tested and validated before deployment. We do not trade signals. We do not speculate. We execute rules.
+                </p>
+              </article>
+              <article class="trust-item">
+                <h3>Performance aligned</h3>
+                <p class="trust-copy">
+                  We only earn when you profit. Our fee structure ties platform success directly to user results.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="why-closer" data-reveal>
+            <div class="divider-rule" aria-hidden="true"></div>
+            <strong>Trade less emotionally. Execute more intelligently.</strong>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-shell"><div class="divider-rule" aria-hidden="true"></div></div>
+
+      <section class="section early" id="early" aria-labelledby="early-title">
+        <div class="section-shell">
+          <div class="early-panel">
+            <div class="early-header" data-reveal>
+              <p class="section-label">EARLY ACCESS</p>
+              <h2 class="early-title" id="early-title">Be first in. Build the edge.</h2>
+              <p class="early-copy">
+                Quantro is in final development. A limited number of early access users will be onboarded before public launch.
+              </p>
+            </div>
+
+            <div class="early-benefits">
+              <article class="benefit-card" data-reveal>
+                <span class="benefit-label">Verified performance data</span>
+                <h3>From live deployment</h3>
+                <p>Live deployment of the founding metals execution system.</p>
+              </article>
+              <article class="benefit-card" data-reveal>
+                <span class="benefit-label">Priority onboarding</span>
+                <h3>Direct access to the team</h3>
+                <p>Direct access to the founding team during setup.</p>
+              </article>
+              <article class="benefit-card" data-reveal>
+                <span class="benefit-label">Community integration</span>
+                <h3>Launches inside Whale Room</h3>
+                <p>Access through Whale Room before public launch.</p>
+              </article>
+            </div>
+
+            <p class="join-label" data-reveal>Join the waitlist</p>
+            <form class="waitlist-form js-waitlist-form" action="#" method="post" data-reveal>
+              <label class="visually-hidden" for="early-email">Email address</label>
+              <input
+                class="waitlist-input"
+                id="early-email"
+                name="email"
+                type="email"
+                placeholder="your@email.com"
+                autocomplete="email"
+                required
+                aria-label="Email address for waitlist"
+              />
+              <button class="waitlist-button" type="submit" aria-label="Request early access">
+                Request Early Access
+              </button>
+            </form>
+            <p class="form-status" aria-live="polite"></p>
+
+            <div class="trust-signals" data-reveal>
+              <span>No credit card</span>
+              <span class="dot" aria-hidden="true">·</span>
+              <span>No subscription</span>
+              <span class="dot" aria-hidden="true">·</span>
+              <span>No commitment</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="divider-shell"><div class="footer-rule" aria-hidden="true"></div></div>
+      <div class="footer-shell">
+        <div>
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M 37.5 28.5 A 15 15 0 1 0 33 35.5"
+                  stroke="currentColor"
+                  stroke-width="3.2"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <line x1="35" y1="32" x2="43" y2="40" stroke="#E4A340" stroke-width="3.4" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <div class="footer-wordmark">QUANTRO</div>
+              <div class="footer-domain">quantro.bot</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-tagline">Automated Execution. Proven Systems. Zero Emotion.</div>
+        <div class="footer-copy">© 2025 Quantro. All rights reserved.</div>
+      </div>
+      <p class="footer-disclaimer">
+        Non-custodial. Capital remains in user accounts at all times. Trading carries risk. Past performance does not guarantee future results.
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var progressBar = document.getElementById('scroll-progress-bar');
+        var loadItems = document.querySelectorAll('[data-load]');
+        var revealItems = document.querySelectorAll('[data-reveal]');
+        var forms = document.querySelectorAll('.js-waitlist-form');
+        var stepNumbers = document.querySelectorAll('.step-number');
+
+        function updateProgress() {
+          var scrollTop = window.scrollY || window.pageYOffset;
+          var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+          var percent = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+          progressBar.style.width = percent + '%';
+        }
+
+        function animateNumber(node) {
+          if (node.dataset.animated === 'true' || reduceMotion) {
+            return;
+          }
+
+          node.dataset.animated = 'true';
+          var target = Number(node.getAttribute('data-target'));
+          var current = 0;
+
+          function tick() {
+            current += 1;
+            node.textContent = String(current).padStart(2, '0');
+            if (current < target) {
+              window.setTimeout(tick, 110);
+            }
+          }
+
+          tick();
+        }
+
+        function revealImmediately() {
+          loadItems.forEach(function (item) {
+            item.classList.add('is-visible');
+          });
+          revealItems.forEach(function (item) {
+            item.classList.add('is-visible');
+          });
+          document.querySelectorAll('.problem-card, .step-card, .benefit-card').forEach(function (item) {
+            item.classList.add('is-visible');
+          });
+          document.querySelectorAll('.hero-watermark').forEach(function (item) {
+            item.classList.add('is-visible');
+          });
+        }
+
+        if (!reduceMotion) {
+          loadItems.forEach(function (item) {
+            window.setTimeout(function () {
+              item.classList.add('is-visible');
+            }, Number((item.style.transitionDelay || '0ms').replace('ms', '')));
+          });
+
+          window.setTimeout(function () {
+            document.querySelectorAll('.hero-watermark').forEach(function (item) {
+              item.classList.add('is-visible');
+            });
+          }, 620);
+
+          var observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                  return;
+                }
+
+                entry.target.classList.add('is-visible');
+
+                if (entry.target.classList.contains('step-card')) {
+                  var number = entry.target.querySelector('.step-number');
+                  if (number) {
+                    animateNumber(number);
+                  }
+                }
+
+                observer.unobserve(entry.target);
+              });
+            },
+            { threshold: 0.15 }
+          );
+
+          revealItems.forEach(function (item) {
+            observer.observe(item);
+          });
+          document.querySelectorAll('.problem-card, .step-card, .benefit-card').forEach(function (item) {
+            observer.observe(item);
+          });
+        } else {
+          revealImmediately();
+        }
+
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+
+        forms.forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var input = form.querySelector('.waitlist-input');
+            var button = form.querySelector('.waitlist-button');
+            var status = form.nextElementSibling;
+
+            if (!input || !button || !input.checkValidity()) {
+              if (status) {
+                status.textContent = 'Please enter a valid email address.';
+              }
+              return;
+            }
+
+            button.textContent = "You're on the list ✓";
+            button.classList.add('is-success');
+            button.setAttribute('disabled', 'disabled');
+            input.setAttribute('disabled', 'disabled');
+
+              if (status) {
+                status.textContent = 'Request noted in this preview build. Connect your live form endpoint before launch.';
+              }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

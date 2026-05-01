@@ -1,0 +1,1337 @@
+--- PAGE 1 ---
+QUANTRO
+quantro.bot
+Automated Execution. Proven Systems. Zero Emotion.
+COMPREHENSIVE BUSINESS PLAN
+Version 8.0  |  2025  |  Strictly Confidential
+PRECISION
+Rule-based execution. No deviation.
+DISCIPLINE
+Systems outperform impulses.
+FREEDOM
+Capital works while you focus.
+STRICTLY CONFIDENTIAL — NOT FOR DISTRIBUTION
+© 2025 Quantro
+
+
+--- PAGE 2 ---
+QUANTRO
+quantro.bot
+TABLE OF CONTENTS
+Contents
+01
+Executive Summary
+ —
+02
+Brand Identity & Corporate Identity
+ —
+03
+Problem & Market Opportunity
+ —
+04
+Product & Platform Overview
+ —
+05
+Business Model & Revenue
+ —
+06
+Go-To-Market & Marketing Strategy
+ —
+07
+Competitive Analysis
+ —
+08
+Technology & Infrastructure
+ —
+09
+Legal & Regulatory Framework
+ —
+10
+Team & Equity Structure
+ —
+11
+Financial Projections
+ —
+12
+Capital Raise Strategy
+ —
+13
+Risk Analysis & Mitigation
+ —
+14
+Expansion Roadmap
+ —
+15
+Exit Strategy & Investor Returns
+ —
+16
+Appendix
+ —
+ This document is strictly confidential and intended solely for the designated recipient. Reproduction or distribution without written authorisation
+ from Quantro is strictly prohibited.
+
+
+--- PAGE 3 ---
+01
+Executive Summary
+Quantro is a non-custodial algorithmic trading infrastructure platform that converts proven trading strategies into
+automated, rule-based execution engines. The platform removes the single greatest barrier to consistent trading
+performance: emotional, inconsistent, time-dependent human execution.
+INVESTOR ONE-LINER
+Quantro is the execution layer that turns proven, tested trading systems into consistent automated
+performance — without the trader needing to be at the screen.
+ $2.4B+
+ Global algo trading market
+ by 2030
+ 20%
+CAGR
+ Sector growth rate
+ 2025–2030
+ Non-Cu
+ stodial
+ Users retain full capital
+ control
+ $9–$29/
+ mo
+ Market-competitive
+subscription pricing
+What Quantro Does
+Quantro automates a trader's proven strategy — their rules, their risk parameters, their entry and exit logic — as a
+live execution engine. Once deployed, the bot executes without hesitation, fatigue, or deviation, 24/7, with full
+transparency. The trader's capital remains in their own exchange account at all times.
+ Initial flagship: Proven candle-close metals trading system with verified track record
+ Platform architecture supports multi-strategy, multi-market expansion from day one
+ Non-custodial design — Quantro never holds, touches, or controls user funds
+ Revenue model is performance and trade-fee primary, subscription secondary
+ Community-first launch into Whale Room with YouTube content as growth engine
+Financial Snapshot
+ 550
+ Total users by end Year 1
+ 5,000
+ Target users by end Year 3
+ $1,000
+ Average capital per user
+ deployed
+ 20%
+ Performance fee on profits
+ generated
+Revenue is driven primarily by a 20% performance fee on profits generated and a per-trade execution fee, with a
+low monthly subscription providing the baseline. On average $1,000 deployed per user, the performance fee model
+creates strong alignment between Quantro's success and user success — we only earn significantly when users
+profit.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+1
+
+
+--- PAGE 4 ---
+02
+Brand Identity & Corporate Identity
+What Quantro Is
+Quantro is the execution of proven systems, without emotion. The brand exists at the intersection of institutional
+discipline and retail accessibility — premium enough to command respect, clear enough to earn trust. Every
+element of the brand communicates one thing: this is a serious tool for serious traders.
+Core Brand Framework
+ ATTRIBUTE
+ DEFINITION
+Mission
+To give traders back their most valuable asset: time.
+Vision
+To become the global infrastructure layer for intelligent automated trading.
+Core Promise
+We do not promise certainty. We promise discipline.
+Positioning
+Between retail simplicity and institutional precision.
+Tagline
+Automated Execution. Proven Systems. Zero Emotion.
+Domain
+quantro.bot — instantly communicates category, modern, memorable
+Brand Pillars
+ PILLAR
+ MEANING
+PRECISION
+Every action is triggered by predefined rules. No discretion. No noise.
+DISCIPLINE
+Consistency creates long-term edge. Systems outperform impulses.
+TRUST
+Capital stays in the user's account. Execution is transparent and accountable.
+INTELLIGENCE
+Only tested and validated systems are deployed. No guesswork.
+FREEDOM
+Time is the ultimate return on investment.
+Brand Personality & Voice
+ QUANTRO FEELS
+ QUANTRO NEVER
+Calm, intelligent, premium
+Loud, hype-driven, flashy
+Engineered, sharp, understated
+Crypto-bro, salesy, overpromising
+Institutional yet accessible
+Jargon-heavy or condescending
+Inevitable, like infrastructure
+Reactive, trend-chasing
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+2
+
+
+--- PAGE 5 ---
+Logo & Visual Identity
+The Quantro visual identity is built on the principle of engineered restraint. Nothing decorative. Every element
+earns its place. The icon mark is a geometric Q: a precise circle with an amber execution tail extending
+bottom-right, and an internal circuit path suggesting automated precision.
+Primary Wordmark
+QUANTRO
+QUANTRO
+Icon Mark & Logo Lockup
+QUANTRO
+quantro.bot
+QUANTRO
+quantro.bot
+Icon — light
+Icon — dark
+Lockup — light
+Lockup — dark
+Colour Palette
+Warm black
+#0B0B0D
+Near black
+#17150F
+Amber primary
+#B07A1A
+Amber accent
+#E4A340
+Warm white
+#FBF9F6
+Typography
+ ROLE
+ SPECIFICATION
+ SAMPLE
+Display / Cover
+Helvetica Neue Bold · 52px+ · tracking
+−1px
+QUANTRO
+Section Heading
+Helvetica Neue Bold · 21px
+Automated Execution
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+3
+
+
+--- PAGE 6 ---
+Label / Callout
+Helvetica Neue Bold · 8pt · +0.08em
+tracking
+PROVEN SYSTEMS
+Body Text
+Helvetica Regular · 9.5pt · leading 15pt
+We remove hesitation and emotional
+decision-making.
+Caption / Note
+Helvetica Oblique · 8pt · muted
+Industry-benchmarked.
+Community-verified.
+Business Card
+QUANTRO
+Chris
+Co-Founder
+quantro.bot
+AUTOMATED EXECUTION
+PROVEN SYSTEMS  ·  ZERO EMOTION
+Front — warm off-white
+Back — near-black with amber accents
+Favicon & App Icon
+48px
+32px
+20px
+16px
+Light alt
+Usage — Do / Don't
+DO
+DON'T
+✓ Use wordmark on warm off-white or near-black
+only
+✓ Use amber exclusively for accents, rules, and
+highlights
+✓ Maintain clear space equal to the height of the
+Q all around the mark
+✓ Always pair icon mark with wordmark at small
+sizes
+✗ Never place the logo on a coloured or busy
+background
+✗ Never stretch, skew, or alter the letterform
+proportions
+✗ Never use a different typeface for the
+wordmark
+✗ Never use both ambers on the same surface
+— one per background
+Corporate Identity Applications
+ Business cards: Warm off-white card stock, dark amber wordmark, amber top rule on front; near-black reverse
+with amber accents
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+4
+
+
+--- PAGE 7 ---
+ Letterhead: Warm off-white with amber top rule 3px, wordmark top-left, quantro.bot bottom-right in muted
+amber
+ Email signature: Name, Co-Founder, quantro.bot — wordmark in dark, domain in amber. No decorative
+elements.
+ Pitch deck: Near-black cover with amber accents and wordmark reversed; warm off-white content slides
+ Platform UI: Dark mode primary — near-black surface, amber CTAs and highlights, warm off-white text
+ Social media: Amber-on-dark cover images; no trend-chasing formats or non-brand typefaces
+INTERNAL PHILOSOPHY
+Good traders build systems. Great traders trust them. Quantro exists for the moment you realise that
+consistency matters more than prediction. The edge was never in watching charts. The edge was
+always in execution.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+5
+
+
+--- PAGE 8 ---
+03
+Problem & Market Opportunity
+Most retail traders do not fail because they lack strategy. They fail because they cannot execute their strategy
+consistently. Emotional interference — fear, greed, hesitation, overtrading — is the primary driver of retail trading
+losses. Research consistently shows that over 70% of retail traders cite emotional decision-making as a key failure
+factor. The problem is not information. The problem is execution.
+The Five Core Problems
+ PROBLEM
+ CONSEQUENCE
+Emotional Execution
+Traders abandon their systems at the worst possible moment — under pressure,
+when consistency matters most.
+Time Dependency
+Profitable systems require constant screen monitoring. Most traders have full
+lives that preclude this.
+Inconsistency
+Same trader, same system, different results — because human execution
+introduces variance.
+Custodial Risk
+Existing bot platforms often hold user funds or require fund transfers, creating
+trust and security risk.
+Complexity Barrier
+Technical bot setup exceeds the skill level of most skilled traders, blocking
+adoption of automation.
+Market Sizing
+ $2.4B+
+ TAM — Global algo trading software
+ $480M
+ SAM — Retail-focused execution
+ platforms
+ $32M
+ SOM — Year 3 realistic addressable
+ revenue
+The total addressable market covers the global algorithmic and automated trading software sector, projected at
+$2.4B+ by 2030 at a 20% CAGR. The serviceable addressable market focuses on retail-facing, strategy-led
+execution platforms. Quantro's obtainable market is grounded in community-first distribution, organic content
+reach, and progressive institutional expansion.
+Why Now
+ Retail trading participation has surged since 2020 and shows no signs of reversal
+ API access to major exchanges is now standardised, accessible, and reliable
+ Trust in custodial platforms has collapsed following multiple high-profile exchange failures
+ Demand for non-custodial, transparent, performance-verified automation is at an all-time high
+ Community-based distribution has proven to be the most cost-effective GTM channel in fintech
+ 20%+ CAGR in automated trading platforms confirms accelerating institutional and retail adoption
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+6
+
+
+--- PAGE 9 ---
+04
+Product & Platform Overview
+Quantro is not a signal service. It is not copy-trading. It is not a fund. Quantro is execution infrastructure — a
+platform that takes a trader's proven system and automates it with precision, discipline, and full transparency. The
+trader's capital remains in their own account at all times.
+MVP — Phase 1: Metals Candle Close Execution Engine
+The initial product deploys the founder-developed candle close metals trading system as an automated bot. This is
+a tested, rule-based strategy with a verified performance record that serves as the proof of concept and flagship
+offering.
+ FEATURE
+ DESCRIPTION
+Candle Close Logic
+Entry/exit triggered on verified candle close signals — no noise, no
+prediction, no discretion
+Non-Custodial Connection
+Users connect via API keys to their own exchange accounts. Quantro never
+holds funds.
+Risk Parameter Controls
+Users define position sizing, stop-loss, and maximum drawdown limits
+Real-Time Dashboard
+Live performance tracking, open positions, execution log, P&L; reporting
+Security Architecture
+AES-256 encrypted API storage, withdrawal-disabled key requirements, full
+audit trails
+Average Capital per User
+~$1,000 deployed per user — conservative, accessible, meaningful enough
+to generate fees
+Phase 2 — Platform Expansion (Year 2)
+ Additional verified strategies added — each passing rigorous backtesting before deployment
+ Expanded market coverage: crypto (CEX), forex, indices alongside metals
+ Mobile monitoring app: iOS and Android execution dashboard
+ Strategy performance transparency: live verified track records published on platform
+Phase 3 — Institutional Layer (Year 3+)
+White-label licensing to trading communities, brokers, and fund managers. Strategy marketplace where vetted
+developers can list verified bots. API infrastructure for institutional partners. DEX integration for on-chain
+execution.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+7
+
+
+--- PAGE 10 ---
+05
+Business Model & Revenue
+Quantro's revenue model is performance-primary and subscription-secondary. This reflects the user base: serious
+traders who deploy real capital value alignment between platform success and their own results. The majority of
+revenue comes from a 20% performance fee on profits generated by the bot, plus a small per-trade execution fee.
+The monthly subscription is kept intentionally accessible to minimise onboarding friction.
+Revenue Stream Architecture
+ STREAM
+ RATE
+ RATIONALE
+Performance Fee
+20% of monthly bot
+profits
+Primary revenue driver. On $1,000 deployed at
+5% monthly return = $50 gross profit → $10 to
+Quantro per user
+Per-Trade Execution Fee
+$0.10 per executed
+trade
+Secondary recurring income. Active system
+generates 8–15 trades/month =
+$0.80–$1.50/user/mo
+Monthly Subscription
+$9 – $29/month tiers
+Baseline revenue, low friction entry. Aligns with
+industry ($29/mo 3Commas Pro benchmark)
+Enterprise / White-Label
+Custom (from $500/mo)
+Licensing to communities, brokers, fund
+managers at institutional rates
+Affiliate / Exchange Referral
+Revenue share
+Commissions from exchange partner programmes
+when users connect APIs
+Pricing Tiers
+Pricing is deliberately positioned below market leaders (3Commas Pro: $29/mo) to maximise adoption, with
+revenue upside captured through performance fees rather than subscription premium.
+STARTER
+$9 / month
+1 active bot | Basic dashboard | Email support | Metals system access
+| Performance fee applies
+PRO
+$19 / month
+3 active bots | Full dashboard | Priority support | All available
+strategies | Performance fee applies
+ELITE
+$29 / month
+Unlimited bots | Advanced analytics | Dedicated support | Early
+strategy access | Reduced performance fee: 15%
+Unit Economics — Per User (Monthly)
+Assumes $1,000 average capital deployed, 5% average monthly system return, active system generating ~10
+trades/month:
+ REVENUE COMPONENT
+ CALCULATION
+ MONTHLY
+REVENUE/USER
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+8
+
+
+--- PAGE 11 ---
+Performance Fee (20%)
+$1,000 × 5% return × 20%
+$10.00
+Per-Trade Fee
+10 trades × $0.10
+$1.00
+Subscription (avg)
+Blended Starter/Pro mix
+$14.00
+Total ARPU
+All streams combined
+~$25.00
+Annual ARPU
+$25 × 12 months
+~$300.00
+Note: Performance fee is the key lever. If the system delivers 8% monthly return (conservative for the metals system historically), ARPU
+from performance fee alone rises to $16/user/month, not including subscription or trade fees.
+ ~$25
+ Blended ARPU per user per
+ month
+ ~$8
+ Est. Customer Acquisition
+ Cost
+ ~37x
+ LTV:CAC at 12-month LTV
+ 80%+
+ Target Gross Margin
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+9
+
+
+--- PAGE 12 ---
+06
+Go-To-Market & Marketing Strategy
+Quantro's go-to-market strategy is built on a single insight: the highest-quality early users come through trusted
+communities, not paid advertising. The founder has direct access to exactly this distribution channel through Whale
+Room and an existing trading audience. This makes Quantro's initial CAC exceptionally low and its early users
+exceptionally high-intent.
+Phase 1 — Community Launch (Q1–Q2 Year 1)
+ Exclusive launch inside Whale Room — 20 to 50 controlled beta users from existing community
+ Real P&L; transparency from day one: verified results published to build trust
+ Aggressive feedback loop: direct access to beta users for rapid product iteration
+ Case studies and performance records documented as future marketing assets
+ Kyle (Whale Room) engaged for strategic advice and community validation
+Phase 2 — Content & Organic Growth (Q3–Q4 Year 1)
+ Dedicated Quantro YouTube channel: real performance updates, system explainers, trading discipline content
+ Short-form content (YouTube Shorts, Instagram Reels) targeting retail traders actively seeking automation
+ Whale Room YouTube integration: co-branded content demonstrating live results to Kyle's subscriber base
+ Educational content positions Quantro as a thought leader in rule-based execution, not just another bot
+ Target: 5,000+ YouTube subscribers and 500 newsletter subscribers by end of Year 1
+Phase 3 — Strategic Partnerships (Year 2)
+ Whale Room formal integration: Quantro as a member-exclusive tool, retention mechanism, and premium
+offering
+ Exchange affiliate programmes: referral commissions when users connect APIs to partner exchanges
+ Partner with aligned trading educators and signal providers for co-marketing
+ Affiliate referral programme: existing users earn revenue share for high-intent referrals
+Phase 4 — Institutional Outreach (Year 3+)
+Once a verified track record of 18+ months exists, institutional marketing begins. Direct outreach to family offices,
+prop trading firms, portfolio managers, and trading community operators seeking reliable execution infrastructure.
+White-label licensing conversations driven by demonstrated performance data.
+Marketing Strategy by Channel
+ CHANNEL
+ STRATEGY
+ COST
+ PRIORITY
+YouTube (Quantro
+Channel)
+Weekly performance videos, system
+explainers, discipline content
+Low (time cost)
+Critical
+Whale Room Integration
+Community tool, co-branded content,
+member exclusive access
+Near zero
+(partnership)
+Critical
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+10
+
+
+--- PAGE 13 ---
+Short-Form Social
+Reels/Shorts: results, execution clips,
+trading mindset content
+Low (repurpose
+YT)
+High
+Referral Programme
+Users earn 15% revenue share for 3
+months per referred subscriber
+Variable
+High
+Exchange Affiliates
+Earn commissions via Binance, OANDA,
+and other exchange partner programmes
+Zero upfront
+Medium
+Email / Newsletter
+Weekly performance updates, system
+insights to subscriber list
+Low (tool cost)
+Medium
+Paid Social (Year 2+)
+Targeted Meta/YouTube ads once proven
+performance data exists
+Budgeted Year 2
+Low initially
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+11
+
+
+--- PAGE 14 ---
+07
+Competitive Analysis
+The automated trading platform space is fragmented between complex institutional tools, low-trust generic bot
+solutions, and exchange-native systems lacking verified strategies. Quantro occupies a differentiated position:
+performance-aligned, strategy-verified, non-custodial execution with community-integrated distribution.
+ PLATFORM
+ PRICE
+NON-CUST.
+ VERIFIED
+ STRAT.
+ PERF. FEE
+ MODEL
+ COMMU
+ NITY
+3Commas
+$29/mo
+✓
+✗
+✗
+✗
+Pionex
+Free (0.05% spread)
+✗
+✗
+✗
+✗
+TradingView
+$15–$60/mo
+✓
+✗
+✗
+✗
+HaasOnline
+$49/mo
+✓
+✗
+✗
+✗
+Cryptohopper
+$19–$99/mo
+✓
+✗
+✗
+Partial
+QUANTRO
+$9–$29/mo + 20%
+perf
+✓
+✓
+✓
+✓
+Quantro's Strategic Moat
+ MOAT
+ DESCRIPTION
+Performance Alignment
+Revenue tied to user profits via performance fee. Quantro only wins when
+users win. No competitor in the retail space does this.
+Strategy Verification
+Every system must be tested and validated before deployment. Not
+signal-based speculation.
+Non-Custodial Architecture
+User funds never leave their own account. Fundamental to trust and
+compliance in a market burned by custodial failures.
+Community Distribution
+Launching inside Whale Room creates organic, high-trust, near-zero CAC
+adoption impossible to replicate at speed.
+Founder Track Record
+The flagship system is the founder's own proven strategy. Trust and
+credibility are inherent, not manufactured.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+12
+
+
+--- PAGE 15 ---
+08
+Technology & Infrastructure
+Quantro's technical architecture is built for security, scalability, and reliability by Spencer, co-founder with deep
+experience in financial system architecture. The platform is non-custodial by design — not as an afterthought.
+Security is not a feature. It is the foundation.
+Architecture Principles
+ Non-custodial by design: Quantro never holds, moves, or controls user funds under any circumstance
+ API key security: all connections use withdrawal-disabled, read/trade-only keys
+ AES-256 encryption at rest and in transit for all user credentials
+ Execution isolation: each user's bot runs in an isolated execution environment
+ Immutable audit trails: all execution events logged, timestamped, and tamper-proof
+ Redundancy: no single point of failure in the execution pipeline
+ COMPONENT
+ DESCRIPTION
+ INDUSTRY STANDARD
+Execution Engine
+Custom rule-based engine for low-latency signal
+execution
+Real-time, <100ms execution
+target
+API Layer
+WebSocket + REST to Binance, OANDA,
+MetaTrader, and others
+Multi-exchange, failsafe routing
+Dashboard (Web)
+React-based real-time monitoring with P&L;,
+positions, log
+Industry: clean UX,
+mobile-responsive
+Cloud Infrastructure
+AWS/GCP scalable deployment, 99.9% uptime
+SLA target
+$500–$2,000/mo at MVP stage
+Database
+Encrypted storage for user data and execution
+records
+Industry: PostgreSQL + Redis
+Security Layer
+MFA, rate limiting, intrusion detection, anomaly
+alerts
+Industry: mandatory for fintech
+Mobile (Phase 2)
+Native iOS and Android monitoring applications
+Expected by Year 2 users
+Third-Party Security Audit
+An independent security audit is mandated before public launch. Industry-standard cost for startup-tier security
+audit via platforms like Vanta ranges from $5,000 to $15,000. This is a non-negotiable investment that directly
+supports user trust, regulatory compliance, and institutional partnership conversations.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+13
+
+
+--- PAGE 16 ---
+09
+Legal & Regulatory Framework
+Quantro is designed with regulatory compliance as a core product feature. The non-custodial model is the single
+most important structural decision — it fundamentally reduces Quantro's regulatory obligations versus custodial
+platforms and directly addresses the trust deficit created by exchange collapses.
+ FRAMEWORK
+ RELEVANCE
+ STATUS
+FAIS Act
+Financial Advisory and Intermediary Services — governs
+advice and intermediary activity
+Non-custodial tool structure
+reduces scope; legal opinion
+required
+FICA
+Financial Intelligence Centre Act — AML/KYC
+requirements
+KYC process implemented
+proportional to regulatory
+requirements
+POPIA
+Protection of Personal Information Act — user data
+privacy
+POPIA-compliant data
+handling from launch
+FSCA
+Financial Sector Conduct Authority — primary SA
+financial regulator
+Monitoring engagement;
+sandbox pathway explored
+SARB
+South African Reserve Bank — currency controls and
+fintech considerations
+Relevant for cross-border
+expansion; reviewed at scale
+Compliance Strategy
+ Legal opinion from specialist financial services attorney obtained before public launch (budgeted:
+R15,000–R25,000)
+ Non-custodial architecture reduces FSP licensing requirements significantly vs custodial platforms
+ User Terms of Service and risk disclosures clearly define tool-provider (not adviser) relationship
+ Comprehensive risk disclosure: users confirm understanding that trading carries risk, past performance ≠
+future results
+ POPIA-compliant data processing, storage, and consent management implemented from day one
+ International expansion compliance reviewed market-by-market before entering each jurisdiction
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+14
+
+
+--- PAGE 17 ---
+10
+Team & Equity Structure
+Quantro is co-founded by two individuals whose capabilities are complementary and essential. The greatest risk in
+early fintech is either great tech with no proven product, or proven product with weak tech. Quantro has neither
+problem.
+Co-Founders
+CHRIS
+Co-Founder
+Strategy, brand, business development, and trading systems.
+Proven track record in metals trading with a verified
+performance history. Responsible for the flagship system,
+community relationships, product vision, user acquisition, and
+revenue strategy. Founder of the trading community presence
+that serves as Quantro's initial distribution channel.
+SPENCER
+Co-Founder
+Technology, platform architecture, and security infrastructure.
+Senior CTO experience at 80Eight with deep expertise in
+financial system design, scalable cloud architecture, and
+security frameworks. Responsible for all technical decisions,
+development execution, API integrations, encryption
+architecture, and platform reliability.
+Equity Structure
+The equity structure reflects equal co-founder contribution across technical and commercial dimensions. Both
+co-founders are treated as equals in ownership and decision-making authority.
+ STAKEHOLDER
+ EQUITY
+ VESTING
+ NOTES
+Chris (Co-Founder)
+45%
+3 years, 12-month cliff
+Commercial,
+strategy, trading
+systems
+Spencer (Co-Founder)
+45%
+3 years, 12-month cliff
+Technology,
+architecture,
+security
+Option Pool
+7%
+Allocated as needed
+Reserved for
+strategic
+advisors and key
+hires
+Investor Pool
+3% (expand
+able)
+Negotiated per round
+Allocated during
+formal capital
+raise rounds
+Strategic Advisors
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+15
+
+
+--- PAGE 18 ---
+Quantro is building a lean advisory structure focused on specific, material value. Kyle (Whale Room) is engaged as
+a strategic voice whose community authority and content distribution reach represents a significant early
+commercial asset. Additional advisors sought in regulatory, institutional sales, and exchange partnership domains.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+16
+
+
+--- PAGE 19 ---
+11
+Financial Projections
+Financial projections are built on the following core assumptions, grounded in industry research and the
+Quantro-specific user model. All figures in USD unless noted.
+Key Assumptions
+ ASSUMPTION
+ VALUE
+ RATIONALE
+Average capital deployed per user
+$1,000
+Conservative entry point; accessible to
+retail community users
+Average monthly system return
+5–8%
+Metals candle close system historical
+range; 5% used as base case
+Performance fee rate
+20% of monthly
+profits
+Primary revenue driver; industry-aligned
+(Pionex arbitrage: 10%, hedge funds:
+20%)
+Per-trade fee
+$0.10/trade
+Secondary revenue; system generates
+approx. 10 trades/month
+Avg monthly subscription (blended)
+$14/user
+Mix of Starter ($9), Pro ($19), Elite ($29)
+Blended ARPU
+~$25/user/month
+Performance fee $10 + trade fee $1 +
+subscription $14
+Customer Acquisition Cost
+$8
+Near-zero community CAC;
+content-driven acquisition
+Monthly churn rate
+8% Yr1, 5% Yr2, 3%
+Yr3
+Improves as product matures and
+community integrates
+Gross margin target
+80–85%
+Industry SaaS benchmark: 70–90%;
+fintech typically 80%+
+Year 1 — Quarterly Breakdown
+ Q1
+ Q2
+ Q3
+ Q4
+ YEAR 1
+ TOTAL
+Active Users
+50
+200
+350
+550
+Avg 287 over
+year
+Monthly Recurring Rev
+$1,250
+$5,000
+$8,750
+$13,750
+—
+Monthly Perf Fee Rev
+$2,500
+$10,000
+$17,500
+$27,500
+—
+Monthly Trade Fee Rev
+$50
+$200
+$350
+$550
+—
+Total Monthly Revenue
+$3,800
+$15,200
+$26,600
+$41,800
+—
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+17
+
+
+--- PAGE 20 ---
+Quarterly Revenue
+$11,400
+$45,600
+$79,800
+$125,400
+$262,200
+Quarterly Costs
+$18,500
+$14,000
+$13,500
+$13,500
+$59,500
+Quarterly EBITDA
+($7,100)
+$31,600
+$66,300
+$111,900
+$202,700
+Q1 shows a planned deficit due to upfront development, legal, and security audit costs. Break-even achieved in Q2 as user base
+reaches critical mass.
+3-Year Revenue Model
+ METRIC
+ YEAR 1
+ YEAR 2
+ YEAR 3
+Active Users (year-end)
+550
+1,000
+5,000
+Avg Users (annual)
+287
+775
+3,000
+Blended ARPU / month
+$25
+$28
+$32
+Subscription Revenue
+$48,300
+$130,200
+$1,152,000
+Performance Fee Revenue
+$172,200
+$465,000
+$7,200,000
+Trade Execution Fee Revenue
+$34,440
+$93,000
+$360,000
+Enterprise / White-Label
+$0
+$36,000
+$180,000
+Total Annual Revenue
+$262,200
+$724,200
+$8,892,000
+Total Annual Costs
+$59,500
+$198,000
+$780,000
+EBITDA
+$202,700
+$526,200
+$8,112,000
+EBITDA Margin
+77%
+73%
+91%
+Year 3 revenue surge reflects 5,000 users each deploying $1,000 average capital. At 5% monthly system return, 20% performance fee =
+$100/user/year performance revenue alone. Institutional licensing adds further upside.
+ $262K
+ Year 1 Total Revenue
+ $724K
+ Year 2 Total Revenue
+ $8.9M
+ Year 3 Total Revenue
+ 91%
+ Year 3 EBITDA Margin
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+18
+
+
+--- PAGE 21 ---
+Cost Structure — Industry-Benchmarked Breakdown
+Cost structure is benchmarked against SaaS Capital's 2023 study of 400+ SaaS companies and fintech-specific
+research. Quantro operates as a lean, co-founder-led business with no full-time salaries in Year 1, giving a
+structural cost advantage versus VC-backed competitors.
+ COST CATEGORY
+ YEAR 1
+ YEAR 2
+ YEAR 3
+ NOTES
+Cloud Infrastructure (AWS/GCP)
+$6,000
+$18,000
+$72,000
+$500/mo MVP; scales
+with users. Industry:
+8–12% of ARR
+Development & Engineering
+$18,000
+$60,000
+$180,000
+Co-founder sweat
+equity Y1; part-time
+dev Y2; team Y3
+Security Audit & Compliance
+$8,000
+$6,000
+$12,000
+Third-party audit
+pre-launch; ongoing
+monitoring
+Legal & Regulatory
+$8,000
+$12,000
+$24,000
+SA legal opinion, ToS,
+international
+expansion prep
+Marketing & Content
+$6,000
+$36,000
+$120,000
+YouTube production,
+paid social Y2+,
+referral programme
+Tools & Subscriptions
+$3,500
+$6,000
+$12,000
+SaaS tools,
+monitoring, analytics,
+exchange data feeds
+Operations & Admin
+$5,000
+$12,000
+$24,000
+Accounting,
+insurance,
+miscellaneous
+operational costs
+Customer Support
+$5,000
+$24,000
+$120,000
+Outsourced Y1;
+part-time Y2; team Y3
+Contingency (20% buffer)
+$0
+$24,000
+$216,000
+Recommended 20%
+buffer per SaaS
+Capital benchmarks
+TOTAL ANNUAL COSTS
+$59,500
+$198,000
+$780,000
+Industry benchmark: bootstrapped SaaS companies typically spend 15–25% of ARR on R&D;, 10–15% on S&M;, and 8–12% on
+infrastructure. Quantro's Year 1 cost ratio is higher due to upfront security and legal investment — a deliberate trade-off that pays back
+in trust and reduced regulatory risk.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+19
+
+
+--- PAGE 22 ---
+12
+Capital Raise Strategy
+Quantro's capital strategy prioritises proving product-market fit on founder capital before external dilution. The
+performance fee model means the platform becomes meaningfully cash-generative from Q2 Year 1 — reducing
+dependency on external capital and strengthening negotiating position for any future raise.
+Phase 0 — Bootstrap (Current)
+MVP development funded through co-founder sweat equity and Spencer's in-house technical capacity. Estimated
+cash requirement to launch: $25,000–$40,000 (legal, audit, initial infrastructure). No external capital required to
+reach paying users.
+Pre-Seed — Optional: $100,000–$200,000
+ Trigger: 100+ paying users with verified track record of 3+ months
+ Use: Legal/compliance acceleration, paid marketing, mobile app development
+ Structure: Convertible note or SAFE at $1.0M–$1.5M pre-money valuation
+ Profile: Angel investors from trading community, SA fintech angels, strategic trading industry contacts
+Seed Round — Target: $400,000–$750,000 (Year 2)
+ Trigger: 500+ active users, ARR approaching $500K, institutional pipeline active
+ Use: Team expansion (head of growth, customer success), international licensing, enterprise sales
+ Structure: Priced equity at $3M–$6M pre-money valuation
+ Profile: SA and international fintech VCs, family offices, strategic trading infrastructure investors
+Investor Return Scenarios
+ SCENARIO
+ ARR Y3
+EBITDA MARGIN
+ VALUATION (10x
+ ARR)
+ SEED
+RETURN
+ (on
+$500K)
+Conservative (3,000 users)
+$5.3M
+88%
+$53M
+~$6M
+(12x)
+Base Case (5,000 users)
+$8.9M
+91%
+$89M
+~$10M
+(20x)
+Upside (5,000+ institutional)
+$14M+
+92%
+$140M+
+~$16M
+(32x)
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+20
+
+
+--- PAGE 23 ---
+13
+Risk Analysis & Mitigation
+Intellectual honesty about risk is central to building a trusted platform. Every material risk is identified, rated, and
+mitigated. Quantro's non-custodial, performance-aligned model inherently reduces several of the most common
+fintech risks.
+ RISK
+ IMPACT
+ PROB.
+ MITIGATION
+Regulatory Change
+HIGH
+MED
+Non-custodial model reduces scope; legal counsel on
+retainer; sandbox engagement
+Strategy Underperformance
+HIGH
+LOW
+Rigorous backtesting; live testing before deployment;
+full P&L; transparency to users
+Security Breach
+HIGH
+LOW
+Third-party audit pre-launch; no fund custody;
+encrypted keys; incident response plan
+Exchange API Failure
+MED
+MED
+Multi-exchange support; automatic failsafes; real-time
+monitoring and alerts
+User Churn
+MED
+MED
+Performance-first retention; community integration;
+continuous product improvement
+Competitive Entry
+MED
+MED
+Performance fee moat; community distribution; founder
+trust; verification standard
+Technical Failures
+HIGH
+LOW
+CTO-level architecture; redundancy; 99.9% uptime
+SLA; staged rollout protocol
+Performance Fee Dispute
+MED
+LOW
+Transparent calculation; real-time user verification;
+audit trail for all P&L; events
+Key Person Risk
+MED
+MED
+Equal co-founder vesting; documentation; advisor
+buffer; knowledge base
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+21
+
+
+--- PAGE 24 ---
+14
+Expansion Roadmap
+Quantro's roadmap is performance-gated. No new market, product, or capability is unlocked until the preceding
+stage is validated. This is not a feature roadmap — it is a trust roadmap.
+ Q1–Q2 2025
+MVP LAUNCH
+Metals candle close system live. 20–50 beta users. Security
+audit complete. Performance tracking live. Legal framework
+finalised.
+ Q3–Q4 2025
+COMMUNITY
+SCALE
+Whale Room integration. YouTube channel live. 550 users.
+Break-even achieved. Pre-seed raise optional.
+ Q1–Q2 2026
+PLATFORM
+EXPANSION
+Second strategy added. Crypto execution (CEX). Mobile
+monitoring app. 1,000 users. Enterprise pipeline initiated.
+ Q3–Q4 2026
+INSTITUTIONAL
+White-label licensing pilots. Enterprise conversations.
+International compliance. Seed raise. 2,000 users.
+ 2027+
+GLOBAL
+INFRASTRUCTURE
+Strategy marketplace. DEX execution. AI portfolio
+optimisation. Global licensing. 5,000+ users. Series A.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+22
+
+
+--- PAGE 25 ---
+15
+Exit Strategy & Investor Returns
+While Quantro's primary focus is building durable infrastructure value, clear exit pathways are essential for investor
+confidence and long-term capital alignment.
+Strategic Acquisition
+ HIGH
+Acquisition by a major exchange (Binance, Coinbase, IG
+Group) or fintech infrastructure player seeking verified retail
+execution capability and community user base.
+Institutional Partnership
+ HIGH
+A large broker or fund manager acquires a controlling stake
+to white-label Quantro as their execution infrastructure for
+retail and HNW clients.
+PE Roll-Up
+ MEDIUM
+Private equity acquisition as part of a fintech automation
+portfolio roll-up, valued on ARR multiples (10–15x ARR at
+scale).
+IPO / Public Listing
+ MEDIUM
+Long-term public market exit when ARR and geographic
+diversification reach institutional threshold.
+Cashflow Asset
+ LOW
+If founders elect to retain the business as a high-margin,
+high-EBITDA cashflow asset — viable given 80–90%+
+margins at scale.
+LONG-TERM VISION
+Quantro aims to become the global infrastructure layer for intelligent automated trading. A platform
+where any proven strategy can be transformed into a scalable execution engine across traditional
+markets, crypto, CEXs, and DEXs. Not just a product. An operating system for disciplined capital
+deployment.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+23
+
+
+--- PAGE 26 ---
+16
+Appendix
+Industry Benchmarks Referenced
+ SOURCE / BENCHMARK
+ METRIC
+ APPLIED IN PLAN
+3Commas (2026)
+$29/mo Pro tier subscription
+Quantro pricing positioned at/below
+benchmark
+Pionex (2026)
+10% performance fee on arbitrage
+profits
+Quantro set at 20% (more aligned to
+hedge fund standard)
+SaaS Capital Study (2023, n=400+)
+Bootstrapped SaaS: 15–25%
+ARR on R&D;, 80%+ gross
+margins
+Cost structure and margin targets
+ETNA / Industry (2025)
+20% CAGR for AI/automated
+trading platforms
+Market sizing and growth
+assumptions
+Ptolemay SaaS Costing (2025)
+Cloud infrastructure
+$500–$2,000/mo at MVP stage
+Year 1 cloud cost assumptions
+Cavanex Security (2026)
+Security audit $5K–$15K for
+startups via Vanta
+Security cost line in Year 1 budget
+Power Trading Group (2026)
+Average $1,000 capital per retail
+bot user
+Core assumption for performance fee
+modelling
+Key Definitions
+ TERM
+ DEFINITION
+Non-Custodial
+Platform never holds, moves, or controls user funds. Users connect own accounts via
+API.
+Performance Fee
+A percentage of profits generated by the bot, charged monthly. Only applies when the
+system profits.
+ARPU
+Average Revenue Per User per month — includes subscription, performance fee, and
+trade fees.
+CAC
+Customer Acquisition Cost — total marketing cost divided by new customers acquired.
+LTV
+Lifetime Value — total revenue expected from one customer over their subscription
+period.
+ARR
+Annual Recurring Revenue — annualised value of subscription and recurring fee
+income.
+TAM/SAM/SOM
+Total / Serviceable / Obtainable Addressable Market — nested market sizing
+framework.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+24
+
+
+--- PAGE 27 ---
+EBITDA
+Earnings Before Interest, Tax, Depreciation and Amortisation — operational profit
+measure.
+ This document is prepared solely for informational purposes and does not constitute an offer to sell or solicitation to buy any security. All
+projections are forward-looking estimates subject to material change. Past trading performance does not guarantee future results. Recipients
+ should conduct their own independent due diligence before making any investment decision.
+QUANTRO
+quantro.bot  |  Confidential Business Plan
+25
+
